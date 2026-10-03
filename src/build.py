@@ -11,7 +11,7 @@ open('out/elon-mails.html','w').write(page({'updated':updated}))
 shutil.rmtree('site',ignore_errors=True); os.makedirs('site/e')
 E=html.escape
 head='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
-head+='<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#ffd60a">'
+head+='<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#ffd60a"><script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script><script defer src="/_vercel/insights/script.js"></script>'
 def og(title,descr,path,kind):
     if not BASE: return ''
     t=E(title);d=E(descr);u=BASE+path;img=BASE+'og.png'
