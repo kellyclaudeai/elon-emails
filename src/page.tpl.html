@@ -122,8 +122,8 @@ footer p{max-width:78ch;margin:0 0 8px}
   <div class="searchrow">
     <input type="search" id="q" placeholder="Search every email: hardcore, nauseous, funding secured" autocomplete="off" aria-label="Search emails">
     <select id="sort" aria-label="Sort order">
-      <option value="old">Oldest first</option>
       <option value="new">Newest first</option>
+      <option value="old">Oldest first</option>
       <option value="rel">Best match</option>
       <option value="long">Longest first</option>
     </select>
@@ -170,7 +170,7 @@ DATA.forEach(function(e){
   e._hay=[e.title,e.subject,e.sender_full,e.to,e.text,e.summary,e.tags.join(' '),e.company,e.thread,e.date_display,e.notes,e.source_name,e.category].join(' \n ').toLowerCase();
   e._head=(e.title+' '+e.subject).toLowerCase();
 });
-var S={q:'',sort:'old',company:null,category:null,provenance:null,text_status:null,year:null,tag:null,thread:null,musk:false,open:{}};
+var S={q:'',sort:'new',company:null,category:null,provenance:null,text_status:null,year:null,tag:null,thread:null,musk:false,open:{}};
 var FACETS=['company','category','provenance','text_status'];
 
 function terms(q){var out=[],m,re=/"([^"]+)"|(\S+)/g;while((m=re.exec(q.toLowerCase())))out.push(m[1]||m[2]);return out}
@@ -277,7 +277,7 @@ function copy(text,btn){
   function fallback(){var ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done()}catch(x){}ta.remove()}
   try{navigator.clipboard.writeText(text).then(done,fallback)}catch(x){fallback()}
 }
-function clearAll(){S.q='';$('q').value='';FACETS.forEach(function(f){S[f]=null});S.year=S.tag=S.thread=null;S.musk=false;$('onlymusk').checked=false}
+function clearAll(){S.q='';$('q').value='';if(S.sort==='rel'){S.sort='new';$('sort').value='new'}FACETS.forEach(function(f){S[f]=null});S.year=S.tag=S.thread=null;S.musk=false;$('onlymusk').checked=false}
 function toList(){var el=document.querySelector('.searchbar');if(el)el.scrollIntoView()}
 
 // featured email in the band
@@ -311,7 +311,7 @@ document.addEventListener('click',function(ev){
   render();
 });
 ['category','provenance','text_status'].forEach(function(f){$('f-'+f).addEventListener('change',function(){S[f]=this.value||null;render()})});
-var timer;$('q').addEventListener('input',function(){clearTimeout(timer);var v=this.value;timer=setTimeout(function(){S.q=v;if(v&&S.sort==='old'){S.sort='rel';$('sort').value='rel'}render()},120)});
+var timer;$('q').addEventListener('input',function(){clearTimeout(timer);var v=this.value;timer=setTimeout(function(){S.q=v;if(v&&S.sort==='new'){S.sort='rel';$('sort').value='rel'}else if(!v&&S.sort==='rel'){S.sort='new';$('sort').value='new'}render()},120)});
 $('sort').addEventListener('change',function(){S.sort=this.value;render()});
 $('onlymusk').addEventListener('change',function(){S.musk=this.checked;render()});
 document.addEventListener('keydown',function(ev){if(ev.key==='/'&&document.activeElement!==$('q')){ev.preventDefault();$('q').focus()}});
