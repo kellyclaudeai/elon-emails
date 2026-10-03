@@ -1,0 +1,166 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Model 3 ramp to 6,000/week, 24/7 shifts, productivity rules | Elon Emails</title><meta name="description" content="Musk congratulates staff on three weeks above 2,000 Model 3s, sets a 6,000/week burst-build target for end of June with 24/7 operations at Fremont, puts all spending above $1M on hold pending his approval, threatens underperforming contractors, and lists his now-famous productivity recommendations (leave useless meetings, no acronyms, ignore chain of command)."><link rel="canonical" href="https://elonemails.com/e/2018-04-17-c06c29.html"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Arimo:ital,wght@0,400;0,700;1,400&display=swap"><style>
+/* Layout: a highlighter-yellow band holds the wordmark and one real email printed on a white sheet; below it, a quiet working archive: sticky search, a year timeline, filters, and a list whose rows open in place as printed emails. Everything left-aligned. */
+:root{
+  --band:#ffd60a; --band-ink:#0a0a0a;
+  --ground:#f1f1ee; --paper:#ffffff; --ink:#15171c; --muted:#5b606b; --line:#d8d8d2; --soft:#e6e6e1;
+  --link:#0b3fd9; --mark:#ffe55c; --mark-ink:#0a0a0a;
+  --shadow:0 1px 0 rgba(0,0,0,.06),0 18px 40px -18px rgba(0,0,0,.35);
+  --ui:"Archivo","Arial Narrow",Arial,sans-serif;
+  --mail:"Arimo",Arial,Helvetica,sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --ground:#17181c; --paper:#22242a; --ink:#ecedf0; --muted:#a2a7b3; --line:#383b44; --soft:#2a2d34;
+  --link:#9db8ff; --mark:#ffd60a; --mark-ink:#0a0a0a;
+  --shadow:0 1px 0 rgba(0,0,0,.4),0 18px 40px -18px rgba(0,0,0,.8); color-scheme:dark } }
+:root[data-theme="dark"]{
+  --ground:#17181c; --paper:#22242a; --ink:#ecedf0; --muted:#a2a7b3; --line:#383b44; --soft:#2a2d34;
+  --link:#9db8ff; --mark:#ffd60a; --mark-ink:#0a0a0a;
+  --shadow:0 1px 0 rgba(0,0,0,.4),0 18px 40px -18px rgba(0,0,0,.8); color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.5;margin:0}
+a{color:var(--link)}
+button,select,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--link);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+
+/* band */
+.top{background:var(--band);color:var(--band-ink);padding-block:26px 0}
+.top a{color:inherit;text-decoration:none}
+h1{font-family:var(--ui);font-stretch:112%;font-weight:900;font-size:clamp(46px,11vw,116px);line-height:.86;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.tagline{font-size:clamp(16px,2.1vw,20px);line-height:1.35;max-width:38em;margin:16px 0 0;font-weight:500}
+.top.small{padding-block:16px}
+.top.small h1{font-size:30px;letter-spacing:-.02em}
+.feature{position:relative;margin-top:28px;margin-bottom:-56px}
+.feature .sheet{margin:0;max-width:760px}
+.feature .bodytext{max-height:15.5em;overflow:hidden;-webkit-mask-image:linear-gradient(#000 78%,transparent);mask-image:linear-gradient(#000 78%,transparent);margin-bottom:10px}
+.feature .bodytext.short{max-height:none;-webkit-mask-image:none;mask-image:none}
+.afterband{height:76px}
+
+/* printed email */
+.sheet{background:var(--paper);color:var(--ink);box-shadow:var(--shadow);padding:26px clamp(18px,4.5vw,44px) 26px;font-family:var(--mail)}
+.hdr{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1px 10px;margin:0 0 18px;font-size:15px;line-height:1.45}
+.hdr dt{font-weight:700}
+.hdr dd{margin:0;overflow-wrap:anywhere}
+.hdr .aside{color:var(--muted)}
+.status{font-family:var(--ui);font-size:13.5px;background:var(--mark);color:var(--mark-ink);display:inline-block;padding:3px 9px;margin:0 0 16px}
+.bodytext{white-space:pre-wrap;overflow-wrap:anywhere;font-size:16px;line-height:1.55;max-width:66ch;margin:0 0 22px}
+.meta{font-family:var(--ui);display:grid;gap:14px;border-top:1px solid var(--line);padding-top:16px;max-width:74ch;font-size:14px}
+.meta p{margin:0}
+.meta ul{margin:0;padding-left:18px}
+.meta li{overflow-wrap:anywhere}
+.label{font-weight:700;margin:0 0 2px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;font-family:var(--ui)}
+.btn{border:1.5px solid var(--ink);background:transparent;color:var(--ink);padding:6px 14px;cursor:pointer;font-size:14px;font-weight:600;text-decoration:none;display:inline-block}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn.solid:hover{background:transparent;color:var(--ink)}
+
+/* toolbar */
+.searchbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:12px;border-bottom:1px solid var(--line)}
+.searchrow{display:flex;gap:8px;flex-wrap:wrap}
+.searchrow input[type=search]{flex:1 1 260px;min-width:0;padding:12px 14px;border:2px solid var(--ink);border-radius:0;background:var(--paper);font-size:17px}
+.searchrow select,.more select{padding:10px;border:1px solid var(--line);border-radius:0;background:var(--paper)}
+.controls{padding-block:22px 6px;display:grid;gap:18px}
+.years{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:3px;align-items:end;height:92px}
+.years button{background:var(--ink);opacity:.82;border:0;padding:0;cursor:pointer;min-height:2px}
+.years button:hover{opacity:1}
+.years button.zero{opacity:.18}
+.years button[aria-pressed=true]{background:var(--band);opacity:1;outline:2px solid var(--ink)}
+.yaxis{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:3px;font-size:10.5px;color:var(--muted);text-align:center;font-variant-numeric:tabular-nums;margin-top:4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:baseline;gap:6px;font-family:var(--ui);font-size:14px;border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:4px 11px;cursor:pointer}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip .n{font-size:12px;opacity:.65;font-variant-numeric:tabular-nums}
+.more>summary{cursor:pointer;font-weight:600;width:fit-content}
+.more .grid{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;padding-top:12px}
+.more label{display:inline-flex;gap:7px;align-items:center}
+.more .tags{flex-basis:100%}
+.resultbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-block:14px 10px;min-height:30px}
+.count{font-weight:700}
+.clear{background:none;border:0;color:var(--link);cursor:pointer;text-decoration:underline;padding:2px 4px;font-size:14px}
+
+/* list */
+.list{border-top:2px solid var(--ink)}
+.msg{border-bottom:1px solid var(--line)}
+.row{display:grid;grid-template-columns:96px minmax(0,1fr);gap:2px 18px;width:100%;text-align:left;background:none;border:0;padding:14px 6px;cursor:pointer}
+.row:hover .ttl{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+.date{font-size:13.5px;color:var(--muted);padding-top:3px;font-variant-numeric:tabular-nums}
+.ttl{display:block;font-weight:700;font-size:18px;line-height:1.25;overflow-wrap:anywhere}
+.who{display:block;font-size:14px;color:var(--muted);overflow-wrap:anywhere;margin-top:2px}
+.who b{color:var(--ink);font-weight:600}
+.snip{font-family:var(--mail);color:var(--muted);font-size:14.5px;line-height:1.45;margin-top:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.pills{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:7px;font-family:var(--ui);font-size:13px;color:var(--muted)}
+.pill.co{color:var(--ink);font-weight:600}
+.pill.part{background:var(--mark);color:var(--mark-ink);padding:0 6px}
+@media (max-width:560px){.row{grid-template-columns:minmax(0,1fr)}}
+.msg.open{background:var(--soft)}
+.msg.open>.sheet{margin:0 6px 20px}
+mark{background:var(--mark);color:var(--mark-ink);padding:0 1px}
+.empty{padding:40px 6px;color:var(--muted)}
+footer{border-top:1px solid var(--line);margin-top:50px;padding-block:22px 44px;color:var(--muted);font-size:13.5px}
+footer p{max-width:78ch;margin:0 0 8px}
+.plain{list-style:none;padding:0;margin:0}
+.plain li{margin:0 0 7px;overflow-wrap:anywhere}
+.pagehead{font-size:clamp(22px,3.4vw,30px);font-weight:800;line-height:1.15;margin:26px 0 16px;text-wrap:balance}
+@media (prefers-reduced-motion:no-preference){.msg.open>.sheet{animation:in .16s ease-out}}
+@keyframes in{from{transform:translateY(-5px)}to{transform:none}}
+</style></head><body><header class="top small"><div class="wrap"><a href="../index.html"><h1>Elon Emails</h1></a></div></header><div class="wrap"><main><h2 class="pagehead">Model 3 ramp to 6,000/week, 24/7 shifts, productivity rules</h2><div class="sheet"><dl class="hdr"><dt>From:</dt><dd>Elon Musk</dd><dt>Date:</dt><dd>April 17, 2018</dd><dt>To:</dt><dd>Everybody (all Tesla employees)</dd><dt>Subject:</dt><dd>Progress, Precision and Profit</dd></dl><div class="bodytext">Progress
+
+First, congratulations are in order! We have now completed our third full week of producing over 2000 Model 3 vehicles. The first week was 2020, the second was 2070 and we just completed 2250 last week, along with 2000 Model S/X vehicles.
+
+This is more than double Tesla&#x27;s weekly production rate last year and an amazing feat in the face of many challenges! It is extremely rare for an automotive company to grow the production rate by over 100% from one year to the next. Moreover, there has simultaneously been a significant improvement in quality and build accuracy, which is reflected in positive owner feedback.
+
+Starting today at Giga and tomorrow at Fremont, we will be stopping for three to five days to do a comprehensive set of upgrades. This should set us up for Model 3 production of 3000 to 4000 per week next month.
+
+Another set of upgrades starting in late May should be enough to unlock production capacity of 6000 Model 3 vehicles per week by the end of June. Please note that all areas of Tesla and our suppliers will be required to demonstrate a Model 3 capacity of ~6000/week by building 850 sets of car parts in 24 hours no later than June 30th.
+
+Any Tesla department or supplier that is unable to do this will need to have a very good explanation why not, along with a plan for fixing the problem and present that to me directly. If anyone needs help achieving this, please let me know as soon as possible. We are going to find a way or make a way to get there.
+
+The reason that the burst-build target rate is 6000 and not 5000 per week in June is that we cannot have a number with no margin for error across thousands of internally and externally produced parts and processes, amplified by a complex global logistics chain. Actual production will move as fast as the least lucky and least well-executed part of the entire Tesla production/supply chain system.
+
+By having a Model 3 subsystem burst-build requirement of 6k by the end of June, we will lay the groundwork for achieving a steady 6k/week across the whole Model 3 system a few months later.
+
+As part of the drive towards 6k, all Model 3 production at Fremont will move to 24/7operations. This means that we will be adding another shift to general assembly, body and paint. Please refer anyone you know who you think meets the Tesla bar for talent, drive and trust. Between Fremont and Giga, Tesla will be adding about 400 people per week for several weeks.
+
+Precision
+
+Most of the design tolerances of the Model 3 are already better than any other car in the world. Soon, they will all be better. This is not enough. We will keep going until the Model 3 build precision is a factor of ten better than any other car in the world. I am not kidding.
+
+Our car needs to be designed and built with such accuracy and precision that, if an owner measures dimensions, panel gaps and flushness, and their measurements don&#x27;t match the Model 3 specs, it just means that their measuring tape is wrong.
+
+Some parts suppliers will be unwilling or unable to achieve this level of precision. I understand that this will be considered an unreasonable request by some. That&#x27;s ok, there are lots of other car companies with much lower standards. They just can&#x27;t work with Tesla.
+
+Profit
+
+A fair criticism leveled at Tesla by outside critics is that you&#x27;re not a real company unless you generate a profit, meaning simply that revenue exceeds costs. It didn&#x27;t make sense to do that until reaching economies of scale, but now we are there.
+
+Going forward, we will be far more rigorous about expenditures. I have asked the Tesla finance team to comb through every expense worldwide, no matter how small, and cut everything that doesn&#x27;t have a strong value justification.
+
+All capital or other expenditures above a million dollars, or where a set of related expenses may accumulate to a million dollars over the next 12 months, should be considered on hold until explicitly approved by me. If you are the manager responsible, please make sure you have a detailed, first principles understanding of the supplier quote, including every line item of parts &amp; labor, before we meet.
+
+I have been disappointed to discover how many contractor companies are interwoven throughout Tesla. Often, it is like a Russian nesting doll of contractor, subcontractor, sub-subcontractor, etc. before you finally find someone doing actual work. This means a lot of middle-managers adding cost but not doing anything obviously useful. Also, many contracts are essentially open time &amp; materials, not fixed price and duration, which creates an incentive to turn molehills into mountains, as they never want to end the money train.
+
+There is a very wide range of contractor performance, from excellent to worse than a drunken sloth. All contracting companies should consider the coming week to be a final opportunity to demonstrate excellence. Any that fail to meet the Tesla standard of excellence will have their contracts ended on Monday.
+
+Btw, here are a few productivity recommendations:
+
+– Excessive meetings are the blight of big companies and almost always get worse over time. Please get of all large meetings, unless you&#x27;re certain they are providing value to the whole audience, in which case keep them very short.
+
+– Also get rid of frequent meetings, unless you are dealing with an extremely urgent matter. Meeting frequency should drop rapidly once the urgent matter is resolved.
+
+– Walk out of a meeting or drop off a call as soon as it is obvious you aren&#x27;t adding value. It is not rude to leave, it is rude to make someone stay and waste their time.
+
+– Don&#x27;t use acronyms or nonsense words for objects, software or processes at Tesla. In general, anything that requires an explanation inhibits communication. We don&#x27;t want people to have to memorize a glossary just to function at Tesla.
+
+– Communication should travel via the shortest path necessary to get the job done, not through the &quot;chain of command&quot;. Any manager who attempts to enforce chain of command communication will soon find themselves working elsewhere.
+
+– A major source of issues is poor communication between depts. The way to solve this is allow free flow of information between all levels. If, in order to get something done between depts, an individual contributor has to talk to their manager, who talks to a director, who talks to a VP, who talks to another VP, who talks to a director, who talks to a manager, who talks to someone doing the actual work, then super dumb things will happen. It must be ok for people to talk directly and just make the right thing happen.
+
+– In general, always pick common sense as your guide. If following a &quot;company rule&quot; is obviously ridiculous in a particular situation, such that it would make for a great Dilbert cartoon, then the rule should change.
+
+If there is something you think should be done to make Tesla execute better or allow you to look forward to coming to work more (same thing in the long term), please send a note to [redacted]
+
+Thanks for being such a kickass team and accomplishing miracles every day. It matters. We are burning the midnight oil to burn the midnight oil.
+
+Elon</div><div class="meta"><div><p class="label">About this email</p><p>Musk congratulates staff on three weeks above 2,000 Model 3s, sets a 6,000/week burst-build target for end of June with 24/7 operations at Fremont, puts all spending above $1M on hold pending his approval, threatens underperforming contractors, and lists his now-famous productivity recommendations (leave useless meetings, no acronyms, ignore chain of command).</p></div><div><p class="label">Notes</p><p>Electrek obtained and printed the full email; feedback email address redacted by the outlet. &#x27;Please get of all large meetings&#x27; typo is in the published text.</p></div><div><p class="label">Where it came from</p><p>Leaked to press; attribution widely reported.</p><ul><li><a href="https://electrek.co/2018/04/17/tesla-model-3-production-goal-6000-units-per-week/" rel="noopener">Electrek</a></li><li><a href="https://www.cnbc.com/2018/04/17/elon-musk-internal-email-6000-model-3s-per-week-by-june.html" rel="noopener">CNBC</a></li><li><a href="https://techcrunch.com/2018/04/17/leaked-tesla-email-says-model-3-will-go-to-24-7-production/amp" rel="noopener">TechCrunch</a></li></ul></div><p>Tesla, company-wide memo. Tags: model-3, production, productivity, meetings, contractors, cost-cutting</p><div class="actions"><a class="btn" href="2018-04-02-732310.html">Earlier email</a><a class="btn solid" href="../index.html">Search all emails</a><a class="btn" href="2018-04-23-d91a89.html">Later email</a></div></div></div></main><footer><p>An unofficial, independent compilation. Not affiliated with Elon Musk or any of his companies. Text is reproduced as published by the linked source.</p></footer></div></body></html>

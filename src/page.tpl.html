@@ -1,0 +1,330 @@
+<title>Elon Emails</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Arimo:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* Layout: a highlighter-yellow band holds the wordmark and one real email printed on a white sheet; below it, a quiet working archive: sticky search, a year timeline, filters, and a list whose rows open in place as printed emails. Everything left-aligned. */
+:root{
+  --band:#ffd60a; --band-ink:#0a0a0a;
+  --ground:#f1f1ee; --paper:#ffffff; --ink:#15171c; --muted:#5b606b; --line:#d8d8d2; --soft:#e6e6e1;
+  --link:#0b3fd9; --mark:#ffe55c; --mark-ink:#0a0a0a;
+  --shadow:0 1px 0 rgba(0,0,0,.06),0 18px 40px -18px rgba(0,0,0,.35);
+  --ui:"Archivo","Arial Narrow",Arial,sans-serif;
+  --mail:"Arimo",Arial,Helvetica,sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --ground:#17181c; --paper:#22242a; --ink:#ecedf0; --muted:#a2a7b3; --line:#383b44; --soft:#2a2d34;
+  --link:#9db8ff; --mark:#ffd60a; --mark-ink:#0a0a0a;
+  --shadow:0 1px 0 rgba(0,0,0,.4),0 18px 40px -18px rgba(0,0,0,.8); color-scheme:dark } }
+:root[data-theme="dark"]{
+  --ground:#17181c; --paper:#22242a; --ink:#ecedf0; --muted:#a2a7b3; --line:#383b44; --soft:#2a2d34;
+  --link:#9db8ff; --mark:#ffd60a; --mark-ink:#0a0a0a;
+  --shadow:0 1px 0 rgba(0,0,0,.4),0 18px 40px -18px rgba(0,0,0,.8); color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.5;margin:0}
+a{color:var(--link)}
+button,select,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--link);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+
+/* band */
+.top{background:var(--band);color:var(--band-ink);padding-block:26px 0}
+.top a{color:inherit;text-decoration:none}
+h1{font-family:var(--ui);font-stretch:112%;font-weight:900;font-size:clamp(46px,11vw,116px);line-height:.86;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.tagline{font-size:clamp(16px,2.1vw,20px);line-height:1.35;max-width:38em;margin:16px 0 0;font-weight:500}
+.top.small{padding-block:16px}
+.top.small h1{font-size:30px;letter-spacing:-.02em}
+.feature{position:relative;margin-top:28px;margin-bottom:-56px}
+.feature .sheet{margin:0;max-width:760px}
+.feature .bodytext{max-height:15.5em;overflow:hidden;-webkit-mask-image:linear-gradient(#000 78%,transparent);mask-image:linear-gradient(#000 78%,transparent);margin-bottom:10px}
+.feature .bodytext.short{max-height:none;-webkit-mask-image:none;mask-image:none}
+.afterband{height:76px}
+
+/* printed email */
+.sheet{background:var(--paper);color:var(--ink);box-shadow:var(--shadow);padding:26px clamp(18px,4.5vw,44px) 26px;font-family:var(--mail)}
+.hdr{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1px 10px;margin:0 0 18px;font-size:15px;line-height:1.45}
+.hdr dt{font-weight:700}
+.hdr dd{margin:0;overflow-wrap:anywhere}
+.hdr .aside{color:var(--muted)}
+.status{font-family:var(--ui);font-size:13.5px;background:var(--mark);color:var(--mark-ink);display:inline-block;padding:3px 9px;margin:0 0 16px}
+.bodytext{white-space:pre-wrap;overflow-wrap:anywhere;font-size:16px;line-height:1.55;max-width:66ch;margin:0 0 22px}
+.meta{font-family:var(--ui);display:grid;gap:14px;border-top:1px solid var(--line);padding-top:16px;max-width:74ch;font-size:14px}
+.meta p{margin:0}
+.meta ul{margin:0;padding-left:18px}
+.meta li{overflow-wrap:anywhere}
+.label{font-weight:700;margin:0 0 2px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;font-family:var(--ui)}
+.btn{border:1.5px solid var(--ink);background:transparent;color:var(--ink);padding:6px 14px;cursor:pointer;font-size:14px;font-weight:600;text-decoration:none;display:inline-block}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn.solid:hover{background:transparent;color:var(--ink)}
+
+/* toolbar */
+.searchbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:12px;border-bottom:1px solid var(--line)}
+.searchrow{display:flex;gap:8px;flex-wrap:wrap}
+.searchrow input[type=search]{flex:1 1 260px;min-width:0;padding:12px 14px;border:2px solid var(--ink);border-radius:0;background:var(--paper);font-size:17px}
+.searchrow select,.more select{padding:10px;border:1px solid var(--line);border-radius:0;background:var(--paper)}
+.controls{padding-block:22px 6px;display:grid;gap:18px}
+.years{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:3px;align-items:end;height:92px}
+.years button{background:var(--ink);opacity:.82;border:0;padding:0;cursor:pointer;min-height:2px}
+.years button:hover{opacity:1}
+.years button.zero{opacity:.18}
+.years button[aria-pressed=true]{background:var(--band);opacity:1;outline:2px solid var(--ink)}
+.yaxis{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:3px;font-size:10.5px;color:var(--muted);text-align:center;font-variant-numeric:tabular-nums;margin-top:4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:baseline;gap:6px;font-family:var(--ui);font-size:14px;border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:4px 11px;cursor:pointer}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip .n{font-size:12px;opacity:.65;font-variant-numeric:tabular-nums}
+.more>summary{cursor:pointer;font-weight:600;width:fit-content}
+.more .grid{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;padding-top:12px}
+.more label{display:inline-flex;gap:7px;align-items:center}
+.more .tags{flex-basis:100%}
+.resultbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-block:14px 10px;min-height:30px}
+.count{font-weight:700}
+.clear{background:none;border:0;color:var(--link);cursor:pointer;text-decoration:underline;padding:2px 4px;font-size:14px}
+
+/* list */
+.list{border-top:2px solid var(--ink)}
+.msg{border-bottom:1px solid var(--line)}
+.row{display:grid;grid-template-columns:96px minmax(0,1fr);gap:2px 18px;width:100%;text-align:left;background:none;border:0;padding:14px 6px;cursor:pointer}
+.row:hover .ttl{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+.date{font-size:13.5px;color:var(--muted);padding-top:3px;font-variant-numeric:tabular-nums}
+.ttl{display:block;font-weight:700;font-size:18px;line-height:1.25;overflow-wrap:anywhere}
+.who{display:block;font-size:14px;color:var(--muted);overflow-wrap:anywhere;margin-top:2px}
+.who b{color:var(--ink);font-weight:600}
+.snip{font-family:var(--mail);color:var(--muted);font-size:14.5px;line-height:1.45;margin-top:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.pills{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:7px;font-family:var(--ui);font-size:13px;color:var(--muted)}
+.pill.co{color:var(--ink);font-weight:600}
+.pill.part{background:var(--mark);color:var(--mark-ink);padding:0 6px}
+@media (max-width:560px){.row{grid-template-columns:minmax(0,1fr)}}
+.msg.open{background:var(--soft)}
+.msg.open>.sheet{margin:0 6px 20px}
+mark{background:var(--mark);color:var(--mark-ink);padding:0 1px}
+.empty{padding:40px 6px;color:var(--muted)}
+footer{border-top:1px solid var(--line);margin-top:50px;padding-block:22px 44px;color:var(--muted);font-size:13.5px}
+footer p{max-width:78ch;margin:0 0 8px}
+.plain{list-style:none;padding:0;margin:0}
+.plain li{margin:0 0 7px;overflow-wrap:anywhere}
+.pagehead{font-size:clamp(22px,3.4vw,30px);font-weight:800;line-height:1.15;margin:26px 0 16px;text-wrap:balance}
+@media (prefers-reduced-motion:no-preference){.msg.open>.sheet{animation:in .16s ease-out}}
+@keyframes in{from{transform:translateY(-5px)}to{transform:none}}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <h1>Elon Emails</h1>
+    <p class="tagline" id="tagline">Emails to and from Elon Musk that have been made public, with the published text, the date, and where each one came from.</p>
+    <div class="feature" id="feature"></div>
+  </div>
+</header>
+<div class="afterband"></div>
+
+<div class="searchbar"><div class="wrap">
+  <div class="searchrow">
+    <input type="search" id="q" placeholder="Search every email: hardcore, nauseous, funding secured" autocomplete="off" aria-label="Search emails">
+    <select id="sort" aria-label="Sort order">
+      <option value="old">Oldest first</option>
+      <option value="new">Newest first</option>
+      <option value="rel">Best match</option>
+      <option value="long">Longest first</option>
+    </select>
+  </div>
+</div></div>
+
+<div class="wrap">
+  <div class="controls">
+    <div><div class="years" id="years"></div><div class="yaxis" id="yaxis"></div></div>
+    <div class="chips" id="f-company"></div>
+    <details class="more" id="more">
+      <summary>More filters</summary>
+      <div class="grid">
+        <select id="f-category" aria-label="Type of email"></select>
+        <select id="f-provenance" aria-label="How it became public"></select>
+        <select id="f-text_status" aria-label="How much text is available"></select>
+        <label><input type="checkbox" id="onlymusk"> Only emails Musk wrote</label>
+        <div class="chips tags" id="toptags"></div>
+      </div>
+    </details>
+  </div>
+  <main>
+    <div class="resultbar" id="resultbar"></div>
+    <div class="list" id="list"></div>
+  </main>
+  <footer>
+    <p>An unofficial, independent compilation. Not affiliated with Elon Musk or any of his companies. Each entry reproduces text as it was published by the linked source. Partial and excerpt mean only part of the email was ever made public. Emails from other people are included where they belong to a published thread.</p>
+    <p id="foot2"></p>
+  </footer>
+</div>
+
+<script id="data" type="application/json">/*DATA*/</script>
+<script>
+(function(){
+var DATA=JSON.parse(document.getElementById('data').textContent);
+var CFG=/*CFG*/{};
+var $=function(id){return document.getElementById(id)};
+var esc=function(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})};
+var MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function shortDate(e){var p=e.date.split('-');if(p.length===3)return MON[+p[1]-1]+' '+(+p[2])+', '+p[0];if(p.length===2)return MON[+p[1]-1]+' '+p[0];return p[0]}
+var STATUS={full:'Full text',partial:'Partial text',excerpt:'Excerpt',none:'No text published'};
+var FLABEL={category:'Any type',provenance:'Any origin',text_status:'Any amount of text'};
+DATA.forEach(function(e){
+  e._hay=[e.title,e.subject,e.sender_full,e.to,e.text,e.summary,e.tags.join(' '),e.company,e.thread,e.date_display,e.notes,e.source_name,e.category].join(' \n ').toLowerCase();
+  e._head=(e.title+' '+e.subject).toLowerCase();
+});
+var S={q:'',sort:'old',company:null,category:null,provenance:null,text_status:null,year:null,tag:null,thread:null,musk:false,open:{}};
+var FACETS=['company','category','provenance','text_status'];
+
+function terms(q){var out=[],m,re=/"([^"]+)"|(\S+)/g;while((m=re.exec(q.toLowerCase())))out.push(m[1]||m[2]);return out}
+function hl(text,ts){
+  if(!ts.length)return esc(text);
+  var re=new RegExp('('+ts.map(function(t){return t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}).join('|')+')','gi');
+  return text.split(re).map(function(p,i){return i%2?'<mark>'+esc(p)+'</mark>':esc(p)}).join('');
+}
+function match(e,ts,skip){
+  if(S.musk&&!e.by_musk)return false;
+  if(S.year&&skip!=='year'&&e.year!==S.year)return false;
+  if(S.tag&&e.tags.indexOf(S.tag)<0)return false;
+  if(S.thread&&e.thread!==S.thread)return false;
+  for(var i=0;i<FACETS.length;i++){var f=FACETS[i];if(S[f]&&skip!==f&&e[f]!==S[f])return false}
+  for(var j=0;j<ts.length;j++)if(e._hay.indexOf(ts[j])<0)return false;
+  return true;
+}
+function score(e,ts){var s=0;ts.forEach(function(t){if(e._head.indexOf(t)>=0)s+=8;var c=e._hay.split(t).length-1;s+=Math.min(c,6)});return s}
+
+function facet(f,ts){
+  var counts={},all={};
+  DATA.forEach(function(e){all[e[f]]=1;if(match(e,ts,f))counts[e[f]]=(counts[e[f]]||0)+1});
+  var keys=Object.keys(all).sort(function(a,b){return (counts[b]||0)-(counts[a]||0)||a.localeCompare(b)});
+  if(f==='text_status')keys=['full','partial','excerpt','none'].filter(function(k){return all[k]});
+  keys=keys.filter(function(k){return counts[k]||S[f]===k});
+  var name=function(k){return f==='text_status'?STATUS[k]:k};
+  if(f==='company'){
+    $('f-company').innerHTML=keys.map(function(k){return '<button type="button" class="chip" data-f="company" data-v="'+esc(k)+'" aria-pressed="'+(S[f]===k)+'">'+esc(k)+' <span class="n">'+(counts[k]||0)+'</span></button>'}).join('');
+  }else{
+    $('f-'+f).innerHTML='<option value="">'+FLABEL[f]+'</option>'+keys.map(function(k){return '<option value="'+esc(k)+'"'+(S[f]===k?' selected':'')+'>'+esc(name(k))+' ('+(counts[k]||0)+')</option>'}).join('');
+  }
+}
+function years(ts){
+  var c={},min=9999,max=0;DATA.forEach(function(e){min=Math.min(min,e.year);max=Math.max(max,e.year);if(match(e,ts,'year'))c[e.year]=(c[e.year]||0)+1});
+  var top=1;for(var k in c)top=Math.max(top,c[k]);
+  var h='',ax='';for(var y=min;y<=max;y++){var n=c[y]||0;
+    h+='<button type="button" class="'+(n?'':'zero')+'" data-y="'+y+'" aria-pressed="'+(S.year===y)+'" title="'+y+': '+n+' emails" aria-label="'+y+', '+n+' emails" style="height:'+(n?Math.max(5,Math.round(n/top*100)):2)+'%"></button>';
+    ax+='<span>&#39;'+String(y).slice(2)+'</span>'}
+  $('years').innerHTML=h;$('yaxis').innerHTML=ax;
+}
+function snippet(e,ts){
+  var t=e.text||e.summary,lo=t.toLowerCase(),at=-1;
+  for(var i=0;i<ts.length&&at<0;i++)at=lo.indexOf(ts[i]);
+  if(at<0)return hl((e.text||e.summary).slice(0,220).replace(/\s+/g,' '),ts);
+  var a=Math.max(0,at-70),b=Math.min(t.length,at+170);if(a>0){var sp=t.indexOf(' ',a);if(sp>=0&&sp<at)a=sp+1}
+  return (a>0?'... ':'')+hl(t.slice(a,b).replace(/\s+/g,' '),ts)+(b<t.length?' ...':'');
+}
+function header(e,ts,plain){
+  return '<dl class="hdr">'+
+    '<dt>From:</dt><dd>'+hl(e.sender_full,ts)+'</dd>'+
+    '<dt>Date:</dt><dd>'+esc(e.date_display)+(e.date_note&&!plain?' <span class="aside">('+esc(e.date_note)+')</span>':'')+'</dd>'+
+    '<dt>To:</dt><dd>'+hl(e.to,ts)+'</dd>'+
+    (e.subject?'<dt>Subject:</dt><dd>'+hl(e.subject,ts)+'</dd>':'')+'</dl>';
+}
+function sheet(e,ts){
+  var h='<div class="sheet">'+header(e,ts);
+  if(e.text_status==='partial')h+='<p class="status">Partial text. Only these passages were published; [...] marks a gap.</p>';
+  if(e.text_status==='excerpt')h+='<p class="status">Excerpt. Only this much of the email has been made public.</p>';
+  if(e.text_status==='none')h+='<p class="status">No text of this email has been published. See the summary below.</p>';
+  if(e.text)h+='<div class="bodytext">'+hl(e.text,ts)+'</div>';
+  h+='<div class="meta"><div><p class="label">About this email</p><p>'+hl(e.summary,ts)+'</p></div>';
+  if(e.notes)h+='<div><p class="label">Notes</p><p>'+hl(e.notes,ts)+'</p></div>';
+  var src=[{name:e.source_name,url:e.source_url}].concat(e.more_sources||[]);
+  h+='<div><p class="label">Where it came from</p><p>'+esc(e.provenance)+'; attribution '+esc(e.confidence.toLowerCase())+'.</p><ul>'+src.map(function(s){return '<li><a href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.name||s.url)+'</a></li>'}).join('')+'</ul></div>';
+  h+='<div class="chips">'+e.tags.map(function(t){return '<button type="button" class="chip" data-tag="'+esc(t)+'">'+esc(t)+'</button>'}).join('')+'</div>';
+  h+='<div class="actions">'+(e.thread?'<button type="button" class="btn solid" data-thread="'+esc(e.thread)+'">Read the whole thread</button>':'')+
+     (e.text?'<button type="button" class="btn" data-copy="'+e.id+'">Copy text</button>':'')+
+     '<button type="button" class="btn" data-link="'+e.id+'">Copy link</button>'+
+     (CFG.pages?'<a class="btn" href="e/'+e.id+'.html">Open as its own page</a>':'')+'</div></div></div>';
+  return h;
+}
+function row(e,ts){
+  var open=!!S.open[e.id];
+  return '<article class="msg'+(open?' open':'')+'" id="'+e.id+'"><button type="button" class="row" data-id="'+e.id+'" aria-expanded="'+open+'">'+
+    '<span class="date">'+shortDate(e)+'</span><span>'+
+    '<span class="ttl">'+hl(e.title,ts)+'</span>'+
+    '<span class="who"><b>'+hl(e.sender,ts)+'</b> to '+hl(e.to,ts)+'</span>'+
+    '<span class="snip">'+snippet(e,ts)+'</span>'+
+    '<span class="pills"><span class="pill co">'+esc(e.company)+'</span><span class="pill'+(e.text_status==='full'?'':' part')+'">'+STATUS[e.text_status]+'</span><span class="pill">'+esc(e.provenance)+'</span>'+(e.words>3?'<span class="pill">'+e.words.toLocaleString()+' words</span>':'')+'</span>'+
+    '</span></button>'+(open?sheet(e,ts):'')+'</article>';
+}
+function render(){
+  var ts=terms(S.q);
+  var res=DATA.filter(function(e){return match(e,ts)});
+  var sort=S.sort;
+  if(S.thread)sort='old';
+  if(sort==='new')res.sort(function(a,b){return b.seq-a.seq});
+  else if(sort==='long')res.sort(function(a,b){return b.words-a.words});
+  else if(sort==='rel'&&ts.length)res.sort(function(a,b){return score(b,ts)-score(a,ts)||a.seq-b.seq});
+  else res.sort(function(a,b){return a.seq-b.seq});
+  FACETS.forEach(function(f){facet(f,ts)});years(ts);
+  var chips='';
+  function chip(label,key){chips+='<button type="button" class="chip" aria-pressed="true" data-clear="'+key+'">'+esc(label)+' &#10005;</button>'}
+  if(S.year)chip(S.year,'year');
+  ['category','provenance','text_status'].forEach(function(f){if(S[f])chip(f==='text_status'?STATUS[S[f]]:S[f],f)});
+  if(S.tag)chip('Tag: '+S.tag,'tag');if(S.thread)chip('Thread: '+S.thread,'thread');if(S.musk)chip('Written by Musk','musk');
+  var any=chips||S.q||S.company;
+  $('resultbar').innerHTML='<span class="count">'+(res.length===DATA.length?'All '+DATA.length+' emails':res.length+' of '+DATA.length+' emails')+'</span>'+chips+(any?'<button type="button" class="clear" data-clear="all">Clear all</button>':'');
+  $('list').innerHTML=res.length?res.map(function(e){return row(e,ts)}).join(''):'<p class="empty">No emails match. Try fewer words, or clear the filters.</p>';
+}
+function byId(id){for(var i=0;i<DATA.length;i++)if(DATA[i].id===id)return DATA[i]}
+function copy(text,btn){
+  var done=function(){var o=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=o},1200)};
+  function fallback(){var ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done()}catch(x){}ta.remove()}
+  try{navigator.clipboard.writeText(text).then(done,fallback)}catch(x){fallback()}
+}
+function clearAll(){S.q='';$('q').value='';FACETS.forEach(function(f){S[f]=null});S.year=S.tag=S.thread=null;S.musk=false;$('onlymusk').checked=false}
+function toList(){var el=document.querySelector('.searchbar');if(el)el.scrollIntoView()}
+
+// featured email in the band
+var PICKS=[/^please note$/i,/fork in the road/i,/acronyms seriously suck/i,/raptor/i,/had enough/i,/remote work is no longer acceptable/i,/0%\. not 1%/i,/souffl/i,/hardcore/i];
+var FEAT=(function(){
+  var pool=DATA.filter(function(e){return e.by_musk&&e.text_status==='full'&&e.words>=25&&e.words<=420});
+  var out=[];PICKS.forEach(function(re){for(var i=0;i<pool.length;i++){var e=pool[i];if(out.indexOf(e)<0&&(re.test(e.subject)||re.test(e.title))){out.push(e);break}}});
+  pool.forEach(function(e){if(out.indexOf(e)<0&&e.category==='Company-wide memo')out.push(e)});
+  return out.length?out:pool;
+})();
+var fi=0;
+function feature(){
+  var e=FEAT[fi%FEAT.length];if(!e){$('feature').hidden=true;return}
+  $('feature').innerHTML='<div class="sheet">'+header(e,[],true)+'<div class="bodytext'+(e.words<110?' short':'')+'">'+esc(e.text)+'</div>'+
+    '<div class="actions"><button type="button" class="btn solid" data-feat="next">Show another</button><button type="button" class="btn" data-feat="open" data-fid="'+e.id+'">Read it in the archive</button></div></div>';
+}
+
+document.addEventListener('click',function(ev){
+  var t=ev.target.closest('button');if(!t)return;var d=t.dataset;
+  if(d.feat==='next'){fi++;feature();return}
+  if(d.feat==='open'){clearAll();S.open[d.fid]=true;render();var el=$(d.fid);if(el)el.scrollIntoView();return}
+  if(d.id){S.open[d.id]=!S.open[d.id];t.parentNode.outerHTML=row(byId(d.id),terms(S.q));return}
+  if(d.f){S[d.f]=S[d.f]===d.v?null:d.v}
+  else if(d.y){S.year=S.year===+d.y?null:+d.y}
+  else if(d.tag){S.tag=d.tag;render();toList();return}
+  else if(d.thread){var th=d.thread;clearAll();S.thread=th;render();toList();return}
+  else if(d.clear){if(d.clear==='all')clearAll();else if(d.clear==='musk'){S.musk=false;$('onlymusk').checked=false}else S[d.clear]=null}
+  else if(d.copy){var e2=byId(d.copy);copy('From: '+e2.sender_full+'\nDate: '+e2.date_display+'\nTo: '+e2.to+(e2.subject?'\nSubject: '+e2.subject:'')+'\n\n'+e2.text,t);return}
+  else if(d.link){copy((CFG.base||location.href.split('#')[0])+(CFG.pages?'e/'+d.link+'.html':'#'+d.link),t);return}
+  else return;
+  render();
+});
+['category','provenance','text_status'].forEach(function(f){$('f-'+f).addEventListener('change',function(){S[f]=this.value||null;render()})});
+var timer;$('q').addEventListener('input',function(){clearTimeout(timer);var v=this.value;timer=setTimeout(function(){S.q=v;if(v&&S.sort==='old'){S.sort='rel';$('sort').value='rel'}render()},120)});
+$('sort').addEventListener('change',function(){S.sort=this.value;render()});
+$('onlymusk').addEventListener('change',function(){S.musk=this.checked;render()});
+document.addEventListener('keydown',function(ev){if(ev.key==='/'&&document.activeElement!==$('q')){ev.preventDefault();$('q').focus()}});
+
+(function(){
+  var musk=0,full=0,tags={},ymin=9999,ymax=0;
+  DATA.forEach(function(e){if(e.by_musk)musk++;if(e.text_status==='full')full++;ymin=Math.min(ymin,e.year);ymax=Math.max(ymax,e.year);e.tags.forEach(function(t){tags[t]=(tags[t]||0)+1})});
+  $('tagline').textContent=DATA.length+' emails to and from Elon Musk that have been made public, '+ymin+' to '+ymax+'. He wrote '+musk+' of them. '+full+' have their full text; the rest are as much as was ever published.';
+  $('toptags').innerHTML=Object.keys(tags).sort(function(a,b){return tags[b]-tags[a]}).slice(0,24).map(function(t){return '<button type="button" class="chip" data-tag="'+esc(t)+'">'+esc(t)+' <span class="n">'+tags[t]+'</span></button>'}).join('');
+  $('foot2').innerHTML='Last updated '+esc(CFG.updated||'')+'.'+(CFG.pdf?' <a href="'+CFG.pdf+'">Download the whole archive as a PDF</a>.':'')+(CFG.pages?' <a href="all.html">Plain list of every email</a>.':'');
+})();
+var h=(location.hash||'').slice(1);if(h&&byId(h))S.open[h]=true;
+feature();render();
+if(h&&$(h))$(h).scrollIntoView();
+})();
+</script>

@@ -1,0 +1,127 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Explaining the Roadster option price increase to customers | Elon Emails</title><meta name="description" content="Musk explains to Roadster reservation holders why Tesla raised option prices: the car&#x27;s true cost was far above the original estimate, the Roadster had to be re-engineered, and Tesla must show viability to obtain government loans for the Model S."><link rel="canonical" href="https://elonemails.com/e/2009-01-20-93c608.html"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Arimo:ital,wght@0,400;0,700;1,400&display=swap"><style>
+/* Layout: a highlighter-yellow band holds the wordmark and one real email printed on a white sheet; below it, a quiet working archive: sticky search, a year timeline, filters, and a list whose rows open in place as printed emails. Everything left-aligned. */
+:root{
+  --band:#ffd60a; --band-ink:#0a0a0a;
+  --ground:#f1f1ee; --paper:#ffffff; --ink:#15171c; --muted:#5b606b; --line:#d8d8d2; --soft:#e6e6e1;
+  --link:#0b3fd9; --mark:#ffe55c; --mark-ink:#0a0a0a;
+  --shadow:0 1px 0 rgba(0,0,0,.06),0 18px 40px -18px rgba(0,0,0,.35);
+  --ui:"Archivo","Arial Narrow",Arial,sans-serif;
+  --mail:"Arimo",Arial,Helvetica,sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --ground:#17181c; --paper:#22242a; --ink:#ecedf0; --muted:#a2a7b3; --line:#383b44; --soft:#2a2d34;
+  --link:#9db8ff; --mark:#ffd60a; --mark-ink:#0a0a0a;
+  --shadow:0 1px 0 rgba(0,0,0,.4),0 18px 40px -18px rgba(0,0,0,.8); color-scheme:dark } }
+:root[data-theme="dark"]{
+  --ground:#17181c; --paper:#22242a; --ink:#ecedf0; --muted:#a2a7b3; --line:#383b44; --soft:#2a2d34;
+  --link:#9db8ff; --mark:#ffd60a; --mark-ink:#0a0a0a;
+  --shadow:0 1px 0 rgba(0,0,0,.4),0 18px 40px -18px rgba(0,0,0,.8); color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.5;margin:0}
+a{color:var(--link)}
+button,select,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--link);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+
+/* band */
+.top{background:var(--band);color:var(--band-ink);padding-block:26px 0}
+.top a{color:inherit;text-decoration:none}
+h1{font-family:var(--ui);font-stretch:112%;font-weight:900;font-size:clamp(46px,11vw,116px);line-height:.86;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.tagline{font-size:clamp(16px,2.1vw,20px);line-height:1.35;max-width:38em;margin:16px 0 0;font-weight:500}
+.top.small{padding-block:16px}
+.top.small h1{font-size:30px;letter-spacing:-.02em}
+.feature{position:relative;margin-top:28px;margin-bottom:-56px}
+.feature .sheet{margin:0;max-width:760px}
+.feature .bodytext{max-height:15.5em;overflow:hidden;-webkit-mask-image:linear-gradient(#000 78%,transparent);mask-image:linear-gradient(#000 78%,transparent);margin-bottom:10px}
+.feature .bodytext.short{max-height:none;-webkit-mask-image:none;mask-image:none}
+.afterband{height:76px}
+
+/* printed email */
+.sheet{background:var(--paper);color:var(--ink);box-shadow:var(--shadow);padding:26px clamp(18px,4.5vw,44px) 26px;font-family:var(--mail)}
+.hdr{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1px 10px;margin:0 0 18px;font-size:15px;line-height:1.45}
+.hdr dt{font-weight:700}
+.hdr dd{margin:0;overflow-wrap:anywhere}
+.hdr .aside{color:var(--muted)}
+.status{font-family:var(--ui);font-size:13.5px;background:var(--mark);color:var(--mark-ink);display:inline-block;padding:3px 9px;margin:0 0 16px}
+.bodytext{white-space:pre-wrap;overflow-wrap:anywhere;font-size:16px;line-height:1.55;max-width:66ch;margin:0 0 22px}
+.meta{font-family:var(--ui);display:grid;gap:14px;border-top:1px solid var(--line);padding-top:16px;max-width:74ch;font-size:14px}
+.meta p{margin:0}
+.meta ul{margin:0;padding-left:18px}
+.meta li{overflow-wrap:anywhere}
+.label{font-weight:700;margin:0 0 2px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;font-family:var(--ui)}
+.btn{border:1.5px solid var(--ink);background:transparent;color:var(--ink);padding:6px 14px;cursor:pointer;font-size:14px;font-weight:600;text-decoration:none;display:inline-block}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn.solid:hover{background:transparent;color:var(--ink)}
+
+/* toolbar */
+.searchbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:12px;border-bottom:1px solid var(--line)}
+.searchrow{display:flex;gap:8px;flex-wrap:wrap}
+.searchrow input[type=search]{flex:1 1 260px;min-width:0;padding:12px 14px;border:2px solid var(--ink);border-radius:0;background:var(--paper);font-size:17px}
+.searchrow select,.more select{padding:10px;border:1px solid var(--line);border-radius:0;background:var(--paper)}
+.controls{padding-block:22px 6px;display:grid;gap:18px}
+.years{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:3px;align-items:end;height:92px}
+.years button{background:var(--ink);opacity:.82;border:0;padding:0;cursor:pointer;min-height:2px}
+.years button:hover{opacity:1}
+.years button.zero{opacity:.18}
+.years button[aria-pressed=true]{background:var(--band);opacity:1;outline:2px solid var(--ink)}
+.yaxis{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:3px;font-size:10.5px;color:var(--muted);text-align:center;font-variant-numeric:tabular-nums;margin-top:4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:baseline;gap:6px;font-family:var(--ui);font-size:14px;border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:4px 11px;cursor:pointer}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip .n{font-size:12px;opacity:.65;font-variant-numeric:tabular-nums}
+.more>summary{cursor:pointer;font-weight:600;width:fit-content}
+.more .grid{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;padding-top:12px}
+.more label{display:inline-flex;gap:7px;align-items:center}
+.more .tags{flex-basis:100%}
+.resultbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-block:14px 10px;min-height:30px}
+.count{font-weight:700}
+.clear{background:none;border:0;color:var(--link);cursor:pointer;text-decoration:underline;padding:2px 4px;font-size:14px}
+
+/* list */
+.list{border-top:2px solid var(--ink)}
+.msg{border-bottom:1px solid var(--line)}
+.row{display:grid;grid-template-columns:96px minmax(0,1fr);gap:2px 18px;width:100%;text-align:left;background:none;border:0;padding:14px 6px;cursor:pointer}
+.row:hover .ttl{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+.date{font-size:13.5px;color:var(--muted);padding-top:3px;font-variant-numeric:tabular-nums}
+.ttl{display:block;font-weight:700;font-size:18px;line-height:1.25;overflow-wrap:anywhere}
+.who{display:block;font-size:14px;color:var(--muted);overflow-wrap:anywhere;margin-top:2px}
+.who b{color:var(--ink);font-weight:600}
+.snip{font-family:var(--mail);color:var(--muted);font-size:14.5px;line-height:1.45;margin-top:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.pills{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:7px;font-family:var(--ui);font-size:13px;color:var(--muted)}
+.pill.co{color:var(--ink);font-weight:600}
+.pill.part{background:var(--mark);color:var(--mark-ink);padding:0 6px}
+@media (max-width:560px){.row{grid-template-columns:minmax(0,1fr)}}
+.msg.open{background:var(--soft)}
+.msg.open>.sheet{margin:0 6px 20px}
+mark{background:var(--mark);color:var(--mark-ink);padding:0 1px}
+.empty{padding:40px 6px;color:var(--muted)}
+footer{border-top:1px solid var(--line);margin-top:50px;padding-block:22px 44px;color:var(--muted);font-size:13.5px}
+footer p{max-width:78ch;margin:0 0 8px}
+.plain{list-style:none;padding:0;margin:0}
+.plain li{margin:0 0 7px;overflow-wrap:anywhere}
+.pagehead{font-size:clamp(22px,3.4vw,30px);font-weight:800;line-height:1.15;margin:26px 0 16px;text-wrap:balance}
+@media (prefers-reduced-motion:no-preference){.msg.open>.sheet{animation:in .16s ease-out}}
+@keyframes in{from{transform:translateY(-5px)}to{transform:none}}
+</style></head><body><header class="top small"><div class="wrap"><a href="../index.html"><h1>Elon Emails</h1></a></div></header><div class="wrap"><main><h2 class="pagehead">Explaining the Roadster option price increase to customers</h2><div class="sheet"><dl class="hdr"><dt>From:</dt><dd>Elon Musk</dd><dt>Date:</dt><dd>January 20, 2009</dd><dt>To:</dt><dd>Tesla Roadster customers</dd><dt>Subject:</dt><dd>The Importance of Options</dd></dl><div class="bodytext">A much fuller account of the history of Tesla is worth telling at some point, but for now I will just talk about the essentials of why we needed to raise prices on options. Fundamentally, it boils down to taking the tough steps that are difficult but necessary for Tesla to be a healthy company and not fall prey to the recession.
+
+When the initial base price, for cars after the Signature 100 series, of $92k was approved by the board a few years ago, it was based on an estimated vehicle cost of roughly $65k provided by management at the time. This turned out to be wrong by a very large margin.
+
+An audit by one of the Series D investors in the summer of 2007 found that the true cost was closer to $140k, which was obviously an extremely alarming discovery and ultimately led to a near complete change in the makeup of the senior management team. Over the past 18 months, observers will note that Tesla has transformed from having a senior team with very little automotive experience to one with deep automotive bench strength. We now have executives with world class track records running everything from design to engineering to production to finance.
+
+To bring the cost of the car down, we have reengineered the entire drivetrain, which is now at version 1.5 and will be at version 2 by June. The body supplier was also switched out from a little company that was charging us nutty money and had a max production of three per week to Sotira, who supplies high paint quality body panels to Lotus, Aston Martin and others. In the process, we had to pay several million dollars for a whole new set of body tooling, as the old tooling had been made incorrectly. The old HVAC system was unreliable and cost almost as much as a new compact car, so also had to be replaced. The wiring harness, seats, navigation system and instrument panel also had to be modified or replaced.
+
+After reengineering and retooling virtually the entire Roadster and completely restructuring our supply chain, we are now finally coming to the point where the variable cost of the car (to be clear, this excludes fixed cost allocation) is between $90k to $100k. With a lot of additional effort by the Tesla team and the help of our suppliers, we should be at or below $80k by this summer. There is some variability here due to exchange rate shifts. Although we gain an automatic currency hedge by selling in both Europe and the US, we are still vulnerable to the Yen, which is very strong right now.
+
+Obviously, this still creates a serious problem for Tesla in the first half of 2009, given the $92k to $98k price of most cars delivered over this time period. The board and I did not want to do a retroactive increase of the base vehicle price, as that would create an unavoidable hardship for customers. Instead, apart from a $1k destination charge increase to match our true cost of logistics, we only raised the price of the optional elements and provided new options and a new model (Roadster Sport) to help improve the average margin per car.
+
+The plan as currently projected, and which I believe is now realistic, shows a high likelihood of reaching profitability on the Roadster business this summer. By that time, we will be delivering cars that have a base price of $109k plus about $20k or so of options (having worked our way through the $92k to $98k early buyers) at a rate of 30 per week. We are fortunately in the position, rare among carmakers, of not having to worry too much about meeting 2009 sales targets, as we are already sold out through October and have barely touched the European market.
+
+My paramount duty is to ensure that we get from here to there without needing to raise more money in this capital scarce environment, even if things don&#x27;t go as well as expected. I firmly believe that the plan above will achieve that goal and that it strikes a reasonable compromise between being fair to early customers and ensuring the viability of Tesla, which is obviously in the best interests of all customers. It&#x27;s also important to note that the price increases will affect 400 customers, all of whom will take delivery after Jan. 1 and receive a $7,500 federal tax credit. We made the pricing changes to ensure the viability of Tesla in the long term, regardless of government incentives, but we hope the credit will offset the increase for most customers.
+
+There is one additional point that relates to the government loans that Tesla is seeking for the Model S program, a much more affordable sedan that we are trying to bring to market as soon as possible. A key requirement is that any company applying be able to show that it is viable without the loans. If we allow ourselves to lose money on the cars we are shipping today, we place those loans at risk. Mass market electric cars have been my goal from the beginning of Tesla. I don&#x27;t want and I don&#x27;t think the vast majority of Tesla customers want us to do anything to jeopardize that objective.
+
+Elon Musk
+CEO &amp; Product Architect</div><div class="meta"><div><p class="label">About this email</p><p>Musk explains to Roadster reservation holders why Tesla raised option prices: the car&#x27;s true cost was far above the original estimate, the Roadster had to be re-engineered, and Tesla must show viability to obtain government loans for the Model S.</p></div><div><p class="label">Notes</p><p>Mass email to Roadster reservation holders; header as reproduced by recipient: From &#x27;Elon Musk, Tesla Motors&#x27;, Tue, 20 Jan 2009 12:45 pm PST.</p></div><div><p class="label">Where it came from</p><p>Published by recipient; attribution widely reported.</p><ul><li><a href="https://saxton.org/tom_saxton/2009/01/price-increase-explanation.html" rel="noopener">Tom Saxton&#x27;s blog (Roadster customer)</a></li><li><a href="https://www.thetruthaboutcars.com/2009/01/tesla-to-angry-customers-its-all-about-us" rel="noopener">The Truth About Cars</a></li><li><a href="https://jalopnik.com/tesla-increases-prices-on-already-ordered-roadsters-5135290" rel="noopener">Jalopnik</a></li></ul></div><p>Tesla, customers &amp; public. Tags: roadster, pricing, customers, cost-cutting, doe-loan</p><div class="actions"><a class="btn" href="2008-11-03-82d2a6.html">Earlier email</a><a class="btn solid" href="../index.html">Search all emails</a><a class="btn" href="2009-03-804223.html">Later email</a></div></div></div></main><footer><p>An unofficial, independent compilation. Not affiliated with Elon Musk or any of his companies. Text is reproduced as published by the linked source.</p></footer></div></body></html>

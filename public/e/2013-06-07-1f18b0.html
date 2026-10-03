@@ -1,0 +1,142 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Why SpaceX won&#x27;t go public until Mars transport is flying | Elon Emails</title><meta name="description" content="Musk tells all SpaceX employees he does not want the company public until the Mars transport system is in place, describing the distractions, volatility and litigation that Tesla and SolarCity faced as public companies. He explains the twice-yearly liquidity events, shares financial figures, and advises on selling stock and options."><link rel="canonical" href="https://elonemails.com/e/2013-06-07-1f18b0.html"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Arimo:ital,wght@0,400;0,700;1,400&display=swap"><style>
+/* Layout: a highlighter-yellow band holds the wordmark and one real email printed on a white sheet; below it, a quiet working archive: sticky search, a year timeline, filters, and a list whose rows open in place as printed emails. Everything left-aligned. */
+:root{
+  --band:#ffd60a; --band-ink:#0a0a0a;
+  --ground:#f1f1ee; --paper:#ffffff; --ink:#15171c; --muted:#5b606b; --line:#d8d8d2; --soft:#e6e6e1;
+  --link:#0b3fd9; --mark:#ffe55c; --mark-ink:#0a0a0a;
+  --shadow:0 1px 0 rgba(0,0,0,.06),0 18px 40px -18px rgba(0,0,0,.35);
+  --ui:"Archivo","Arial Narrow",Arial,sans-serif;
+  --mail:"Arimo",Arial,Helvetica,sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --ground:#17181c; --paper:#22242a; --ink:#ecedf0; --muted:#a2a7b3; --line:#383b44; --soft:#2a2d34;
+  --link:#9db8ff; --mark:#ffd60a; --mark-ink:#0a0a0a;
+  --shadow:0 1px 0 rgba(0,0,0,.4),0 18px 40px -18px rgba(0,0,0,.8); color-scheme:dark } }
+:root[data-theme="dark"]{
+  --ground:#17181c; --paper:#22242a; --ink:#ecedf0; --muted:#a2a7b3; --line:#383b44; --soft:#2a2d34;
+  --link:#9db8ff; --mark:#ffd60a; --mark-ink:#0a0a0a;
+  --shadow:0 1px 0 rgba(0,0,0,.4),0 18px 40px -18px rgba(0,0,0,.8); color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.5;margin:0}
+a{color:var(--link)}
+button,select,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--link);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+
+/* band */
+.top{background:var(--band);color:var(--band-ink);padding-block:26px 0}
+.top a{color:inherit;text-decoration:none}
+h1{font-family:var(--ui);font-stretch:112%;font-weight:900;font-size:clamp(46px,11vw,116px);line-height:.86;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.tagline{font-size:clamp(16px,2.1vw,20px);line-height:1.35;max-width:38em;margin:16px 0 0;font-weight:500}
+.top.small{padding-block:16px}
+.top.small h1{font-size:30px;letter-spacing:-.02em}
+.feature{position:relative;margin-top:28px;margin-bottom:-56px}
+.feature .sheet{margin:0;max-width:760px}
+.feature .bodytext{max-height:15.5em;overflow:hidden;-webkit-mask-image:linear-gradient(#000 78%,transparent);mask-image:linear-gradient(#000 78%,transparent);margin-bottom:10px}
+.feature .bodytext.short{max-height:none;-webkit-mask-image:none;mask-image:none}
+.afterband{height:76px}
+
+/* printed email */
+.sheet{background:var(--paper);color:var(--ink);box-shadow:var(--shadow);padding:26px clamp(18px,4.5vw,44px) 26px;font-family:var(--mail)}
+.hdr{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1px 10px;margin:0 0 18px;font-size:15px;line-height:1.45}
+.hdr dt{font-weight:700}
+.hdr dd{margin:0;overflow-wrap:anywhere}
+.hdr .aside{color:var(--muted)}
+.status{font-family:var(--ui);font-size:13.5px;background:var(--mark);color:var(--mark-ink);display:inline-block;padding:3px 9px;margin:0 0 16px}
+.bodytext{white-space:pre-wrap;overflow-wrap:anywhere;font-size:16px;line-height:1.55;max-width:66ch;margin:0 0 22px}
+.meta{font-family:var(--ui);display:grid;gap:14px;border-top:1px solid var(--line);padding-top:16px;max-width:74ch;font-size:14px}
+.meta p{margin:0}
+.meta ul{margin:0;padding-left:18px}
+.meta li{overflow-wrap:anywhere}
+.label{font-weight:700;margin:0 0 2px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;font-family:var(--ui)}
+.btn{border:1.5px solid var(--ink);background:transparent;color:var(--ink);padding:6px 14px;cursor:pointer;font-size:14px;font-weight:600;text-decoration:none;display:inline-block}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn.solid:hover{background:transparent;color:var(--ink)}
+
+/* toolbar */
+.searchbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:12px;border-bottom:1px solid var(--line)}
+.searchrow{display:flex;gap:8px;flex-wrap:wrap}
+.searchrow input[type=search]{flex:1 1 260px;min-width:0;padding:12px 14px;border:2px solid var(--ink);border-radius:0;background:var(--paper);font-size:17px}
+.searchrow select,.more select{padding:10px;border:1px solid var(--line);border-radius:0;background:var(--paper)}
+.controls{padding-block:22px 6px;display:grid;gap:18px}
+.years{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:3px;align-items:end;height:92px}
+.years button{background:var(--ink);opacity:.82;border:0;padding:0;cursor:pointer;min-height:2px}
+.years button:hover{opacity:1}
+.years button.zero{opacity:.18}
+.years button[aria-pressed=true]{background:var(--band);opacity:1;outline:2px solid var(--ink)}
+.yaxis{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:3px;font-size:10.5px;color:var(--muted);text-align:center;font-variant-numeric:tabular-nums;margin-top:4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:baseline;gap:6px;font-family:var(--ui);font-size:14px;border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:4px 11px;cursor:pointer}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip .n{font-size:12px;opacity:.65;font-variant-numeric:tabular-nums}
+.more>summary{cursor:pointer;font-weight:600;width:fit-content}
+.more .grid{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;padding-top:12px}
+.more label{display:inline-flex;gap:7px;align-items:center}
+.more .tags{flex-basis:100%}
+.resultbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-block:14px 10px;min-height:30px}
+.count{font-weight:700}
+.clear{background:none;border:0;color:var(--link);cursor:pointer;text-decoration:underline;padding:2px 4px;font-size:14px}
+
+/* list */
+.list{border-top:2px solid var(--ink)}
+.msg{border-bottom:1px solid var(--line)}
+.row{display:grid;grid-template-columns:96px minmax(0,1fr);gap:2px 18px;width:100%;text-align:left;background:none;border:0;padding:14px 6px;cursor:pointer}
+.row:hover .ttl{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+.date{font-size:13.5px;color:var(--muted);padding-top:3px;font-variant-numeric:tabular-nums}
+.ttl{display:block;font-weight:700;font-size:18px;line-height:1.25;overflow-wrap:anywhere}
+.who{display:block;font-size:14px;color:var(--muted);overflow-wrap:anywhere;margin-top:2px}
+.who b{color:var(--ink);font-weight:600}
+.snip{font-family:var(--mail);color:var(--muted);font-size:14.5px;line-height:1.45;margin-top:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.pills{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:7px;font-family:var(--ui);font-size:13px;color:var(--muted)}
+.pill.co{color:var(--ink);font-weight:600}
+.pill.part{background:var(--mark);color:var(--mark-ink);padding:0 6px}
+@media (max-width:560px){.row{grid-template-columns:minmax(0,1fr)}}
+.msg.open{background:var(--soft)}
+.msg.open>.sheet{margin:0 6px 20px}
+mark{background:var(--mark);color:var(--mark-ink);padding:0 1px}
+.empty{padding:40px 6px;color:var(--muted)}
+footer{border-top:1px solid var(--line);margin-top:50px;padding-block:22px 44px;color:var(--muted);font-size:13.5px}
+footer p{max-width:78ch;margin:0 0 8px}
+.plain{list-style:none;padding:0;margin:0}
+.plain li{margin:0 0 7px;overflow-wrap:anywhere}
+.pagehead{font-size:clamp(22px,3.4vw,30px);font-weight:800;line-height:1.15;margin:26px 0 16px;text-wrap:balance}
+@media (prefers-reduced-motion:no-preference){.msg.open>.sheet{animation:in .16s ease-out}}
+@keyframes in{from{transform:translateY(-5px)}to{transform:none}}
+</style></head><body><header class="top small"><div class="wrap"><a href="../index.html"><h1>Elon Emails</h1></a></div></header><div class="wrap"><main><h2 class="pagehead">Why SpaceX won&#x27;t go public until Mars transport is flying</h2><div class="sheet"><dl class="hdr"><dt>From:</dt><dd>Elon Musk</dd><dt>Date:</dt><dd>June 7, 2013 <span class="aside">(Header as published: June 7, 2013, 12:43:06 AM PDT)</span></dd><dt>To:</dt><dd>All (spacex-employees@spacex.com)</dd><dt>Subject:</dt><dd>Going Public</dd></dl><div class="bodytext">Per my recent comments, I am increasingly concerned about SpaceX going public before the Mars transport system is in place. Creating the technology needed to establish life on Mars is and always has been the fundamental goal of SpaceX. If being a public company diminishes that likelihood, then we should not do so until Mars is secure. This is something that I am open to reconsidering, but, given my experiences with Tesla and SolarCity, I am hesitant to foist being public on SpaceX, especially given the long term nature of our mission.
+
+Some at SpaceX who have not been through a public company experience may think that being public is desirable. This is not so. Public company stocks, particularly if big step changes in technology are involved, go through extreme volatility, both for reasons of internal execution and for reasons that have nothing to do with anything except the economy. This causes people to be distracted by the manic-depressive nature of the stock instead of creating great products.
+
+It is important to emphasize that Tesla and SolarCity are public because they didn&#x27;t have any choice. Their private capital structure was becoming unwieldy and they needed to raise a lot of equity capital. SolarCity also needed to raise a huge amount of debt at the lowest possible interest rate to fund solar leases. The banks who provide that debt wanted SolarCity to have the additional painful scrutiny that comes with being public. Those rules, referred to as Sarbanes-Oxley, essentially result in a tax being levied on company execution by requiring detailed reporting right down to how your meal is expensed during travel and you can be penalized even for minor mistakes.
+
+YES, BUT I COULD MAKE MORE MONEY IF WE WERE PUBLIC
+
+For those who are under the impression that they are so clever that they can outsmart public market investors and would sell SpaceX stock at the &quot;right time,&quot; let me relieve you of any such notion. If you really are better than most hedge fund managers, then there is no need to worry about the value of your SpaceX stock, as you can just invest in other public stocks and make billions of dollars in the market.
+
+If you think: &quot;Ah, but I know what&#x27;s really going on at SpaceX and that will give me an edge,&quot; you are also wrong. Selling public company stock with insider knowledge is illegal. As a result, selling public stock is restricted to narrow time windows a few times per year. Even then, you can be prosecuted for insider trading. At Tesla, we had both an employee and an investor go through a grand jury investigation for selling stock over a year ago, despite them doing everything right in both the letter and the spirit of the law. Not fun.
+
+Another thing that happens to public companies is that you become a target of the trial lawyers who create a class action lawsuit by getting someone to buy a few hundred shares and then pretending to sue the company on behalf of all investors for any drop in the stock price. Tesla is going through that right now even though the stock price is relatively high, because the drop in question occurred last year.
+
+It is also not correct to think that because Tesla and SolarCity share prices are on the lofty side right now, that SpaceX would be too. Public companies are judged on quarterly performance. Just because some companies are doing well, doesn&#x27;t mean that all would. Both of those companies (Tesla in particular) had great first quarter results. SpaceX did not. In fact, financially speaking, we had an awful first quarter. If we were public, the short sellers would be hitting us over the head with a large stick.
+
+We would also get beaten up every time there was an anomaly on the rocket or spacecraft, as occurred on flight 4 with the engine failure and flight 5 with the Dragon prevalves. Delaying launch of V1.1, which is now over a year behind schedule, would result in particularly severe punishment, as that is our primary revenue driver. Even something as minor as pushing a launch back a few weeks from one quarter to the next gets you a spanking. Tesla vehicle production in Q4 last year was literally only three weeks behind and yet the market response was brutal.
+
+BEST OF BOTH WORLDS
+
+My goal at SpaceX is to give you the best aspects of a public and private company. When we do a financing round, the stock price is keyed off of approximately what we would be worth if publicly traded, excluding irrational exuberance or depression, but without the pressure and distraction of being under a hot public spotlight. Rather than have the stock up during one liquidity window and down during another, the goal is a steady upward trend and never to let the share price go below the last round. The end result for you (or an investor in SpaceX) financially will be the same as if we were public and you sold a steady amount of stock every year.
+
+In case you are wondering about a specific number, I can say that I&#x27;m confident that our long term stock price will be over $100 if we execute well on Falcon 9 and Dragon. For this to be the case, we must have a steady and rapid cadence of launch that is far better than what we have achieved in the past. We have more work ahead of us than you probably realize. Let me give you a sense of where things stand financially: SpaceX expenses this year will be roughly $800 to $900 million (which blows my mind btw). Since we get revenue of $60M for every F9 flight or double that for a FH or F9-Dragon flight, we must have about twelve flights per year where four of those flights are either Dragon or Heavy merely in order to achieve 10% profitability!
+
+For the next few years, we have NASA commercial crew funding that helps supplement those numbers, but, after that, we are on our own. That is not much time to finish F9, FH, Dragon V2 and achieve an average launch rate of at least one per month. And bear in mind that is an average, so if we take an extra three weeks to launch a rocket for any reason (could even be due to the satellite), we have only one week to do the follow-on-flight.
+
+MY RECOMMENDATION
+
+Below is my advice about regarding selling SpaceX stock or options. No complicated analysis is required, as the rules of thumb are pretty simple. If you believe that SpaceX will execute better than the average public company, then our stock price will continue to appreciate at a rate greater than that of the stock market, which would be the next highest return place to invest money over the long term. Therefore, you should sell only the amount that you need to improve your standard of living in the short to medium term. I do actually recommend selling some amount of stock, even if you are certain it will appreciate, as life is short and a bit more cash can increase fun and reduce stress at home (so long as you don&#x27;t ratchet up your ongoing personal expenditures proportionately).
+
+To maximize your post tax return, you are probably best off exercising your options to convert them to stock (if you can afford to do this) and then holding the stock for a year before selling it at our roughly biannual liquidity events. This allows you to pay the capital gains tax rate, instead of the income tax rate.
+
+On a final note, we are planning to do a liquidity event as soon as Falcon 9 qualification is complete in one to two months. I don&#x27;t know exactly what the share price will be yet, but, based on initial conversations with investors, I would estimate probably between $30 and $35. This places the value of SpaceX at $4 to $5 billion, which is about what it would be if we were public right now and, frankly, an excellent number considering that the new F9, FH and Dragon V2 have yet to launch.
+
+Elon</div><div class="meta"><div><p class="label">About this email</p><p>Musk tells all SpaceX employees he does not want the company public until the Mars transport system is in place, describing the distractions, volatility and litigation that Tesla and SolarCity faced as public companies. He explains the twice-yearly liquidity events, shares financial figures, and advises on selling stock and options.</p></div><div><p class="label">Notes</p><p>Leaked within days of sending in June 2013; later reproduced in an appendix of Ashlee Vance&#x27;s biography.</p></div><div><p class="label">Where it came from</p><p>Leaked to press; attribution widely reported.</p><ul><li><a href="https://www.valuewalk.com/2018/01/elons-email-spacex-employees-regarding-taking-company-public/" rel="noopener">ValueWalk (reprint of the email)</a></li><li><a href="https://www.nextbigfuture.com/2013/06/elon-musk-will-keep-spacex-private.html" rel="noopener">NextBigFuture (June 2013)</a></li><li><a href="https://wccftech.com/elon-musks-conundrum-when-and-if-to-take-spacex-public/amp/" rel="noopener">Wccftech</a></li></ul></div><p>SpaceX, company-wide memo. Tags: ipo, stock, mars, liquidity, finance</p><div class="actions"><a class="btn" href="2013-03-a72e91.html">Earlier email</a><a class="btn solid" href="../index.html">Search all emails</a><a class="btn" href="2013-09-82af30.html">Later email</a></div></div></div></main><footer><p>An unofficial, independent compilation. Not affiliated with Elon Musk or any of his companies. Text is reproduced as published by the linked source.</p></footer></div></body></html>

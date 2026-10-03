@@ -1,0 +1,207 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Altman sends Musk the OpenAI LP term sheet: &#x27;I won&#x27;t take any equity&#x27; | Elon Emails</title><meta name="description" content="Six months after Musk left the board, Altman sends him the summary term sheet for the planned capped-profit OpenAI LP ($500M initial raise at a 100x redemption cap, nonprofit-controlled general partner) and says his current thought is to take no equity himself so as to be completely unconflicted."><link rel="canonical" href="https://elonemails.com/e/2018-08-31-7be4d6.html"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Arimo:ital,wght@0,400;0,700;1,400&display=swap"><style>
+/* Layout: a highlighter-yellow band holds the wordmark and one real email printed on a white sheet; below it, a quiet working archive: sticky search, a year timeline, filters, and a list whose rows open in place as printed emails. Everything left-aligned. */
+:root{
+  --band:#ffd60a; --band-ink:#0a0a0a;
+  --ground:#f1f1ee; --paper:#ffffff; --ink:#15171c; --muted:#5b606b; --line:#d8d8d2; --soft:#e6e6e1;
+  --link:#0b3fd9; --mark:#ffe55c; --mark-ink:#0a0a0a;
+  --shadow:0 1px 0 rgba(0,0,0,.06),0 18px 40px -18px rgba(0,0,0,.35);
+  --ui:"Archivo","Arial Narrow",Arial,sans-serif;
+  --mail:"Arimo",Arial,Helvetica,sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --ground:#17181c; --paper:#22242a; --ink:#ecedf0; --muted:#a2a7b3; --line:#383b44; --soft:#2a2d34;
+  --link:#9db8ff; --mark:#ffd60a; --mark-ink:#0a0a0a;
+  --shadow:0 1px 0 rgba(0,0,0,.4),0 18px 40px -18px rgba(0,0,0,.8); color-scheme:dark } }
+:root[data-theme="dark"]{
+  --ground:#17181c; --paper:#22242a; --ink:#ecedf0; --muted:#a2a7b3; --line:#383b44; --soft:#2a2d34;
+  --link:#9db8ff; --mark:#ffd60a; --mark-ink:#0a0a0a;
+  --shadow:0 1px 0 rgba(0,0,0,.4),0 18px 40px -18px rgba(0,0,0,.8); color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.5;margin:0}
+a{color:var(--link)}
+button,select,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--link);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+
+/* band */
+.top{background:var(--band);color:var(--band-ink);padding-block:26px 0}
+.top a{color:inherit;text-decoration:none}
+h1{font-family:var(--ui);font-stretch:112%;font-weight:900;font-size:clamp(46px,11vw,116px);line-height:.86;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.tagline{font-size:clamp(16px,2.1vw,20px);line-height:1.35;max-width:38em;margin:16px 0 0;font-weight:500}
+.top.small{padding-block:16px}
+.top.small h1{font-size:30px;letter-spacing:-.02em}
+.feature{position:relative;margin-top:28px;margin-bottom:-56px}
+.feature .sheet{margin:0;max-width:760px}
+.feature .bodytext{max-height:15.5em;overflow:hidden;-webkit-mask-image:linear-gradient(#000 78%,transparent);mask-image:linear-gradient(#000 78%,transparent);margin-bottom:10px}
+.feature .bodytext.short{max-height:none;-webkit-mask-image:none;mask-image:none}
+.afterband{height:76px}
+
+/* printed email */
+.sheet{background:var(--paper);color:var(--ink);box-shadow:var(--shadow);padding:26px clamp(18px,4.5vw,44px) 26px;font-family:var(--mail)}
+.hdr{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1px 10px;margin:0 0 18px;font-size:15px;line-height:1.45}
+.hdr dt{font-weight:700}
+.hdr dd{margin:0;overflow-wrap:anywhere}
+.hdr .aside{color:var(--muted)}
+.status{font-family:var(--ui);font-size:13.5px;background:var(--mark);color:var(--mark-ink);display:inline-block;padding:3px 9px;margin:0 0 16px}
+.bodytext{white-space:pre-wrap;overflow-wrap:anywhere;font-size:16px;line-height:1.55;max-width:66ch;margin:0 0 22px}
+.meta{font-family:var(--ui);display:grid;gap:14px;border-top:1px solid var(--line);padding-top:16px;max-width:74ch;font-size:14px}
+.meta p{margin:0}
+.meta ul{margin:0;padding-left:18px}
+.meta li{overflow-wrap:anywhere}
+.label{font-weight:700;margin:0 0 2px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;font-family:var(--ui)}
+.btn{border:1.5px solid var(--ink);background:transparent;color:var(--ink);padding:6px 14px;cursor:pointer;font-size:14px;font-weight:600;text-decoration:none;display:inline-block}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn.solid:hover{background:transparent;color:var(--ink)}
+
+/* toolbar */
+.searchbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:12px;border-bottom:1px solid var(--line)}
+.searchrow{display:flex;gap:8px;flex-wrap:wrap}
+.searchrow input[type=search]{flex:1 1 260px;min-width:0;padding:12px 14px;border:2px solid var(--ink);border-radius:0;background:var(--paper);font-size:17px}
+.searchrow select,.more select{padding:10px;border:1px solid var(--line);border-radius:0;background:var(--paper)}
+.controls{padding-block:22px 6px;display:grid;gap:18px}
+.years{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:3px;align-items:end;height:92px}
+.years button{background:var(--ink);opacity:.82;border:0;padding:0;cursor:pointer;min-height:2px}
+.years button:hover{opacity:1}
+.years button.zero{opacity:.18}
+.years button[aria-pressed=true]{background:var(--band);opacity:1;outline:2px solid var(--ink)}
+.yaxis{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:3px;font-size:10.5px;color:var(--muted);text-align:center;font-variant-numeric:tabular-nums;margin-top:4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:baseline;gap:6px;font-family:var(--ui);font-size:14px;border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:4px 11px;cursor:pointer}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip .n{font-size:12px;opacity:.65;font-variant-numeric:tabular-nums}
+.more>summary{cursor:pointer;font-weight:600;width:fit-content}
+.more .grid{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;padding-top:12px}
+.more label{display:inline-flex;gap:7px;align-items:center}
+.more .tags{flex-basis:100%}
+.resultbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-block:14px 10px;min-height:30px}
+.count{font-weight:700}
+.clear{background:none;border:0;color:var(--link);cursor:pointer;text-decoration:underline;padding:2px 4px;font-size:14px}
+
+/* list */
+.list{border-top:2px solid var(--ink)}
+.msg{border-bottom:1px solid var(--line)}
+.row{display:grid;grid-template-columns:96px minmax(0,1fr);gap:2px 18px;width:100%;text-align:left;background:none;border:0;padding:14px 6px;cursor:pointer}
+.row:hover .ttl{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+.date{font-size:13.5px;color:var(--muted);padding-top:3px;font-variant-numeric:tabular-nums}
+.ttl{display:block;font-weight:700;font-size:18px;line-height:1.25;overflow-wrap:anywhere}
+.who{display:block;font-size:14px;color:var(--muted);overflow-wrap:anywhere;margin-top:2px}
+.who b{color:var(--ink);font-weight:600}
+.snip{font-family:var(--mail);color:var(--muted);font-size:14.5px;line-height:1.45;margin-top:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.pills{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:7px;font-family:var(--ui);font-size:13px;color:var(--muted)}
+.pill.co{color:var(--ink);font-weight:600}
+.pill.part{background:var(--mark);color:var(--mark-ink);padding:0 6px}
+@media (max-width:560px){.row{grid-template-columns:minmax(0,1fr)}}
+.msg.open{background:var(--soft)}
+.msg.open>.sheet{margin:0 6px 20px}
+mark{background:var(--mark);color:var(--mark-ink);padding:0 1px}
+.empty{padding:40px 6px;color:var(--muted)}
+footer{border-top:1px solid var(--line);margin-top:50px;padding-block:22px 44px;color:var(--muted);font-size:13.5px}
+footer p{max-width:78ch;margin:0 0 8px}
+.plain{list-style:none;padding:0;margin:0}
+.plain li{margin:0 0 7px;overflow-wrap:anywhere}
+.pagehead{font-size:clamp(22px,3.4vw,30px);font-weight:800;line-height:1.15;margin:26px 0 16px;text-wrap:balance}
+@media (prefers-reduced-motion:no-preference){.msg.open>.sheet{animation:in .16s ease-out}}
+@keyframes in{from{transform:translateY(-5px)}to{transform:none}}
+</style></head><body><header class="top small"><div class="wrap"><a href="../index.html"><h1>Elon Emails</h1></a></div></header><div class="wrap"><main><h2 class="pagehead">Altman sends Musk the OpenAI LP term sheet: &#x27;I won&#x27;t take any equity&#x27;</h2><div class="sheet"><dl class="hdr"><dt>From:</dt><dd>Sam Altman</dd><dt>Date:</dt><dd>August 31, 2018</dd><dt>To:</dt><dd>Elon Musk; cc Sam Teller, Shivon Zilis</dd><dt>Subject:</dt><dd>OpenAI term sheet</dd></dl><div class="bodytext">Elon--
+
+Please see attached, look forward to feedback.
+
+Also, my current thought is that I won&#x27;t take any equity. I&#x27;m not doing this for the money anyway, and I like the idea of being completely unconflicted and just focused on the best outcome for the world. If it appeared at some point we weren&#x27;t going to build AGI but were going to build something valuable, then maybe I&#x27;d want equity then.
+
+Sam
+
+[Attachment: &quot;OpenAI LP - Summary of Principal Terms&quot; (PDF), reproduced from the exhibit:]
+
+OpenAI
+Summary Term Sheet
+
+Mission
+
+OpenAI&#x27;s mission is to ensure that artificial general intelligence - by which we mean highly autonomous systems that outperform humans at most economically valuable work - (AGI), when developed, is safe and benefits all of humanity. We will attempt to directly build safe and beneficial AGI, but will also consider our mission fulfilled if our work aids others to achieve this outcome.
+
+Corporate Structure
+
+OpenAI LP will be a for-profit Delaware Limited Partnership managed by its General Partner, a single-member Delaware LLC controlled by OpenAI, Inc. (the Nonprofit)&#x27;s Board of Directors. At all times, no more than a minority of the Nonprofit&#x27;s Board of Directors will be holders of any economic interest in OpenAI LP or in the employee holdings entity (described below).
+
+Funding/ Revenue
+
+Initial Capitalization
+
+OpenAI LP will initially be capitalized by a contribution of assets from the Nonprofit. The Nonprofit will get an interest equivalent to that of a Limited Partner in the initial raise that is consistent with the value of its capital contribution.
+
+Limited Partner Interests
+
+We will sell preferred capped Limited Partner Interests redeemable (on a first in, first out basis) for a multiple of the purchase price (adjusted for inflation as described below). Redemption will commence either (a) if and when we successfully create AGI capable of generating the requisite returns and the General Partner, in its sole and absolute discretion, determines that redemptions will begin, or (b) at a mutually agreeable pre-AGI alternative. Specifically, the fundraising rounds will be as follows:
+
+1. Initial raise: $500M, 100x target redemption
+2. Employee pool: $100B capped target redemption
+• Actual redemption amount will be based on the number of employee LP Interests issued, which will be determined (subject only to the aggregate cap) by the General Partner in its sole and absolute discretion.
+• The General Partner may increase the target redemption of the employee pool in its sole and absolute discretion.
+3. Second raise: $10+B, 15x expected target redemption.
+4. There may be additional fundraising rounds and/or an additional employee pool, though the interests of employee and/or investor Limited Partners cannot be diluted absent approval of a majority-in-interest of the affected class of Limited Partner (employee/investor).
+
+Distributions will be made as follows:
+
+• First, distributions will be made to initial raise investors in proportion to their respective capital contributions until each investor has received an amount equal to its aggregate capital contributions, with such distributions counting against the investors&#x27; target redemption amount;
+• Next, 25% of all distributions will be made to initial raise investors and employees in proportion to their respective target redemption amounts, and 75% will go to second raise investors in proportion to their respective capital contributions until each investor has received an amount equal to its aggregate capital contributions. Subsequently, all future payments will be in proportion to each investor/employee&#x27;s respective target redemption amount. Distributions will continue until all investors and employees have received their respective target redemption amounts; and
+• Any amounts in excess of the target redemption amounts shall be distributed to or for the benefit of the Nonprofit in its capacity as a Limited Partner.
+
+For the first 10 years after the initial raise, the inflation rate will be determined by reference to the U.S. Consumer Price Index or such alternative U.S. governmental index as determined by the General Partner with the consent of a majority-in-interest of the Limited Partners (determined by reference to target redemption amounts). Subsequently, starting in year 11, the target redemption amounts will increase annually at the greater of the inflation rate or a simple interest rate equal to the London Interbank Offered Rate plus 2%.
+
+Any earlier redemption date must be approved by a majority-in-interest of the investor Limited Partners, as determined by reference to their target redemption amounts.
+
+Prior to redemption, all items of profits and loss will be allocated among the Partners in proportion to their target redemption amounts.
+
+Revenue
+
+At some future date, OpenAI LP may generate revenue, primarily in the form of interest, dividends, capital gains, and royalties. To the extent it seeks to commercialize technology in a way that will generate significant revenue subject to the Unrelated Business Income Tax, OpenAI LP will create taxable &quot;corporate blocker&quot; subsidiaries to commercialize such technology.
+
+Should we generate revenue (through OpenAI LP or its subsidiaries) that is not reserved for Research &amp; Development activities and/or other related expenses, at the sole discretion of the General Partner, such surplus revenue will be distributed to our Limited Partners. These periodic distributions will be allocated based on the Limited Partner&#x27;s targeted redemption amounts and will not count against the targeted redemption amounts.
+
+Tax Distributions
+
+OpenAI LP will make customary tax distributions to all Partners in respect of the net taxable income of OpenAI LP, if any. The amount and timing of any tax distribution will be determined in the discretion of the General Partner.
+
+OpenAI LP exists to advance our mission using the principles expounded in OpenAI&#x27;s Charter. We will employ the Partnership&#x27;s assets to help us achieve these goals, such as through funding research and development activities, investing in companies and assets that may further the mission, and other related activities. The General Partner shall have the sole right to determine the amount of the Partnership&#x27;s assets that shall be spent on and reserved for the expenditures in advancement of the mission.
+
+Fiduciary Duties
+
+Our duty to these principles and the advancement of our mission takes precedence over any obligation to generate a profit. We may never make a profit, and we are under no obligation to do so. We are free to re-invest any or all of our cash flow into research and development activities and/or related expenses without any obligation to the Limited Partners. The General Partner will have discretion to establish and maintain reserves for such expenditures, consistent with the mission, so long as such discretion is exercised reasonably.
+
+The fiduciary duties of the Nonprofit Board of Directors flow exclusively to the Nonprofit, not to the Limited Partners.
+
+Employee Comp.
+
+In addition to their salary, employees will be granted profit interests in an employee holding vehicle (detailed below) in exchange for their services. Certain employees of the Nonprofit will also be granted profits interests in the target redemption amount, if any, held by Nonprofit. It is intended that the profits interests will not give rise to tax liability at the time of grant. Grants will vest over 6 years, with 0% in the first year, followed by 20% vesting each year for the next five years.
+
+Employee interests will not be transferrable until the employee has been at OpenAI for one year. Employees are limited to selling a maximum of 25% of their vested interests per year.
+
+Each employee recipient will make a timely Section 83(b) election with respect to their profits interests.
+
+Employee Holding Company
+
+We will create a separate holding company (OpenAI Holdings, L.P.) to issue profit interests to employees of OpenAI LP. OpenAI LP will issue mirror profits interests to OpenAI Holdings, and, as a result, OpenAI Holdings will be a partner in OpenAI LP (along with the investors). The profits interests held by employees in OpenAI Holdings thus will represent an indirect economic interest in OpenAI LP.
+
+By receiving profits interests in OpenAI Holdings rather than OpenAI LP, it is intended that employees will be spared certain negative tax consequences of holding a partnership interest directly in a partnership in which they are also employees (such as quarterly estimated tax filings, self-employment taxes and no longer being eligible to participate in certain employee benefit plans). Employees will receive W-2s from OpenAI LP and otherwise will be treated as employees at that level for tax purposes. Employees will receive K-1s from OpenAI Holdings in connection with their profits interests and otherwise will be treated as partners at that level for tax purposes.
+
+Limitations Re: Transfer of Interests
+
+Notwithstanding any of the preceding, the transferability of LP Interests will be subject to limitations including:
+
+1. transfers will be limited to a period occurring once per year;
+2. transfers can only be between and among Limited Partners absent prior approval by the General Partner;
+3. transfers will be limited so as to avoid material burdens upon the partnership or the General Partner under securities and other applicable laws; and
+4. transfers will be limited to avoid partnership tax liability under US federal &quot;publicly traded partnership&quot; and other similar laws.
+
+Information Rights
+
+Each Limited Partner will be furnished with annual financial statements within 90 days following the end of each financial year.
+
+All scheduled payments to Limited Partners will be considered confidential, and Limited Partners are not entitled to information regarding the interests of other Partners, provided that the Limited Partners will be entitled to such information as they need to self-organize for purposes of exercising their voting and other rights under the governing Limited Partnership Agreement. Confidentiality will be subject to customary exclusions for required governmental reporting; for example, the Nonprofit will be required to disclose certain information regarding OpenAI LP on its IRS Form 990, which will be available to the public.
+
+Strategic Investment Agreements
+
+OpenAI LP is empowered to enter into strategic investment agreements with companies that become Limited Partners subject only to the caveat that those agreements must not clearly subvert the redemption waterfall described above nor clearly detract from the advancement of our mission.</div><div class="meta"><div><p class="label">About this email</p><p>Six months after Musk left the board, Altman sends him the summary term sheet for the planned capped-profit OpenAI LP ($500M initial raise at a 100x redemption cap, nonprofit-controlled general partner) and says his current thought is to take no equity himself so as to be completely unconflicted.</p></div><div><p class="label">Notes</p><p>Text taken from the PDF text layer of the court exhibit via CourtListener/RECAP. Header: Fri, 31 Aug 2018 11:30:15 +0200. The OCR renders the subject as &#x27;OpenAJ tenn sheet&#x27;; it is normalised here to &#x27;OpenAI term sheet&#x27;. Paragraph breaks in the email body and line unwrapping in the attachment are reconstructed from the line layout; the term sheet&#x27;s left-column section labels (Mission, Corporate Structure, Funding/Revenue, Fiduciary Duties, Employee Comp., etc.) are kept as separate lines, and its nested bullets are flattened. The bracketed line is an editorial label. No reply from Musk appears in the exhibit; the same email is Ex. 61 to the Wiener Declaration and Ex. 63 to the Hawes Declaration, which were not retrievable.</p></div><div><p class="label">Where it came from</p><p>Court record; attribution confirmed.</p><ul><li><a href="https://storage.courtlistener.com/recap/gov.uscourts.cand.433688/gov.uscourts.cand.433688.379.46.pdf" rel="noopener">Musk v. Altman, Dkt. 379-46 (Ex. 19 to Cohen Declaration; Musk deposition Ex. 8; Bates SPX-001642 to SPX-001647; unsealed Jan 6, 2026)</a></li><li><a href="https://storage.courtlistener.com/recap/gov.uscourts.cand.433688/gov.uscourts.cand.433688.379.2.pdf" rel="noopener">Musk v. Altman, Dkt. 379-2 (OpenAI statement of undisputed facts, citing the term sheet as Wiener Ex. 61)</a></li></ul></div><p>OpenAI, executive &amp; internal. Tags: capped-profit, openai-lp, term-sheet, equity, fundraising, musk-v-openai</p><div class="actions"><a class="btn" href="2018-08-30-cca561.html">Earlier email</a><a class="btn solid" href="../index.html">Search all emails</a><a class="btn" href="2018-09-04-9a97db.html">Later email</a></div></div></div></main><footer><p>An unofficial, independent compilation. Not affiliated with Elon Musk or any of his companies. Text is reproduced as published by the linked source.</p></footer></div></body></html>

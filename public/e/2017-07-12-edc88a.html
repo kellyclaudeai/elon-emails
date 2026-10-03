@@ -1,0 +1,146 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Sutskever: &#x27;The business of building AGI&#x27; | Elon Emails</title><meta name="description" content="Sutskever lays out the thesis that hardware is the binding constraint on AGI, predicts 10x yearly hardware speedups, and lists what OpenAI needs: best results each year, 5,000 GPUs, headcount growth to 200 by 2020, and an overwhelming hardware advantage, all requiring large amounts of capital."><link rel="canonical" href="https://elonemails.com/e/2017-07-12-edc88a.html"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Arimo:ital,wght@0,400;0,700;1,400&display=swap"><style>
+/* Layout: a highlighter-yellow band holds the wordmark and one real email printed on a white sheet; below it, a quiet working archive: sticky search, a year timeline, filters, and a list whose rows open in place as printed emails. Everything left-aligned. */
+:root{
+  --band:#ffd60a; --band-ink:#0a0a0a;
+  --ground:#f1f1ee; --paper:#ffffff; --ink:#15171c; --muted:#5b606b; --line:#d8d8d2; --soft:#e6e6e1;
+  --link:#0b3fd9; --mark:#ffe55c; --mark-ink:#0a0a0a;
+  --shadow:0 1px 0 rgba(0,0,0,.06),0 18px 40px -18px rgba(0,0,0,.35);
+  --ui:"Archivo","Arial Narrow",Arial,sans-serif;
+  --mail:"Arimo",Arial,Helvetica,sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --ground:#17181c; --paper:#22242a; --ink:#ecedf0; --muted:#a2a7b3; --line:#383b44; --soft:#2a2d34;
+  --link:#9db8ff; --mark:#ffd60a; --mark-ink:#0a0a0a;
+  --shadow:0 1px 0 rgba(0,0,0,.4),0 18px 40px -18px rgba(0,0,0,.8); color-scheme:dark } }
+:root[data-theme="dark"]{
+  --ground:#17181c; --paper:#22242a; --ink:#ecedf0; --muted:#a2a7b3; --line:#383b44; --soft:#2a2d34;
+  --link:#9db8ff; --mark:#ffd60a; --mark-ink:#0a0a0a;
+  --shadow:0 1px 0 rgba(0,0,0,.4),0 18px 40px -18px rgba(0,0,0,.8); color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.5;margin:0}
+a{color:var(--link)}
+button,select,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--link);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+
+/* band */
+.top{background:var(--band);color:var(--band-ink);padding-block:26px 0}
+.top a{color:inherit;text-decoration:none}
+h1{font-family:var(--ui);font-stretch:112%;font-weight:900;font-size:clamp(46px,11vw,116px);line-height:.86;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.tagline{font-size:clamp(16px,2.1vw,20px);line-height:1.35;max-width:38em;margin:16px 0 0;font-weight:500}
+.top.small{padding-block:16px}
+.top.small h1{font-size:30px;letter-spacing:-.02em}
+.feature{position:relative;margin-top:28px;margin-bottom:-56px}
+.feature .sheet{margin:0;max-width:760px}
+.feature .bodytext{max-height:15.5em;overflow:hidden;-webkit-mask-image:linear-gradient(#000 78%,transparent);mask-image:linear-gradient(#000 78%,transparent);margin-bottom:10px}
+.feature .bodytext.short{max-height:none;-webkit-mask-image:none;mask-image:none}
+.afterband{height:76px}
+
+/* printed email */
+.sheet{background:var(--paper);color:var(--ink);box-shadow:var(--shadow);padding:26px clamp(18px,4.5vw,44px) 26px;font-family:var(--mail)}
+.hdr{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1px 10px;margin:0 0 18px;font-size:15px;line-height:1.45}
+.hdr dt{font-weight:700}
+.hdr dd{margin:0;overflow-wrap:anywhere}
+.hdr .aside{color:var(--muted)}
+.status{font-family:var(--ui);font-size:13.5px;background:var(--mark);color:var(--mark-ink);display:inline-block;padding:3px 9px;margin:0 0 16px}
+.bodytext{white-space:pre-wrap;overflow-wrap:anywhere;font-size:16px;line-height:1.55;max-width:66ch;margin:0 0 22px}
+.meta{font-family:var(--ui);display:grid;gap:14px;border-top:1px solid var(--line);padding-top:16px;max-width:74ch;font-size:14px}
+.meta p{margin:0}
+.meta ul{margin:0;padding-left:18px}
+.meta li{overflow-wrap:anywhere}
+.label{font-weight:700;margin:0 0 2px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;font-family:var(--ui)}
+.btn{border:1.5px solid var(--ink);background:transparent;color:var(--ink);padding:6px 14px;cursor:pointer;font-size:14px;font-weight:600;text-decoration:none;display:inline-block}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn.solid:hover{background:transparent;color:var(--ink)}
+
+/* toolbar */
+.searchbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);padding-block:12px;border-bottom:1px solid var(--line)}
+.searchrow{display:flex;gap:8px;flex-wrap:wrap}
+.searchrow input[type=search]{flex:1 1 260px;min-width:0;padding:12px 14px;border:2px solid var(--ink);border-radius:0;background:var(--paper);font-size:17px}
+.searchrow select,.more select{padding:10px;border:1px solid var(--line);border-radius:0;background:var(--paper)}
+.controls{padding-block:22px 6px;display:grid;gap:18px}
+.years{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:3px;align-items:end;height:92px}
+.years button{background:var(--ink);opacity:.82;border:0;padding:0;cursor:pointer;min-height:2px}
+.years button:hover{opacity:1}
+.years button.zero{opacity:.18}
+.years button[aria-pressed=true]{background:var(--band);opacity:1;outline:2px solid var(--ink)}
+.yaxis{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:3px;font-size:10.5px;color:var(--muted);text-align:center;font-variant-numeric:tabular-nums;margin-top:4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:baseline;gap:6px;font-family:var(--ui);font-size:14px;border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:4px 11px;cursor:pointer}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip .n{font-size:12px;opacity:.65;font-variant-numeric:tabular-nums}
+.more>summary{cursor:pointer;font-weight:600;width:fit-content}
+.more .grid{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;padding-top:12px}
+.more label{display:inline-flex;gap:7px;align-items:center}
+.more .tags{flex-basis:100%}
+.resultbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-block:14px 10px;min-height:30px}
+.count{font-weight:700}
+.clear{background:none;border:0;color:var(--link);cursor:pointer;text-decoration:underline;padding:2px 4px;font-size:14px}
+
+/* list */
+.list{border-top:2px solid var(--ink)}
+.msg{border-bottom:1px solid var(--line)}
+.row{display:grid;grid-template-columns:96px minmax(0,1fr);gap:2px 18px;width:100%;text-align:left;background:none;border:0;padding:14px 6px;cursor:pointer}
+.row:hover .ttl{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+.date{font-size:13.5px;color:var(--muted);padding-top:3px;font-variant-numeric:tabular-nums}
+.ttl{display:block;font-weight:700;font-size:18px;line-height:1.25;overflow-wrap:anywhere}
+.who{display:block;font-size:14px;color:var(--muted);overflow-wrap:anywhere;margin-top:2px}
+.who b{color:var(--ink);font-weight:600}
+.snip{font-family:var(--mail);color:var(--muted);font-size:14.5px;line-height:1.45;margin-top:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.pills{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:7px;font-family:var(--ui);font-size:13px;color:var(--muted)}
+.pill.co{color:var(--ink);font-weight:600}
+.pill.part{background:var(--mark);color:var(--mark-ink);padding:0 6px}
+@media (max-width:560px){.row{grid-template-columns:minmax(0,1fr)}}
+.msg.open{background:var(--soft)}
+.msg.open>.sheet{margin:0 6px 20px}
+mark{background:var(--mark);color:var(--mark-ink);padding:0 1px}
+.empty{padding:40px 6px;color:var(--muted)}
+footer{border-top:1px solid var(--line);margin-top:50px;padding-block:22px 44px;color:var(--muted);font-size:13.5px}
+footer p{max-width:78ch;margin:0 0 8px}
+.plain{list-style:none;padding:0;margin:0}
+.plain li{margin:0 0 7px;overflow-wrap:anywhere}
+.pagehead{font-size:clamp(22px,3.4vw,30px);font-weight:800;line-height:1.15;margin:26px 0 16px;text-wrap:balance}
+@media (prefers-reduced-motion:no-preference){.msg.open>.sheet{animation:in .16s ease-out}}
+@keyframes in{from{transform:translateY(-5px)}to{transform:none}}
+</style></head><body><header class="top small"><div class="wrap"><a href="../index.html"><h1>Elon Emails</h1></a></div></header><div class="wrap"><main><h2 class="pagehead">Sutskever: &#x27;The business of building AGI&#x27;</h2><div class="sheet"><dl class="hdr"><dt>From:</dt><dd>Ilya Sutskever</dd><dt>Date:</dt><dd>July 12, 2017</dd><dt>To:</dt><dd>Elon Musk, Greg Brockman</dd><dt>Subject:</dt><dd>The business of building AGI</dd></dl><div class="bodytext">We usually decide that problems are hard because smart people have worked on them unsuccessfully for a long time. It&#x27;s easy to think that this is true about AI. However, the past five years of progress have shown that the earliest and simplest ideas about AI — neural networks — were right all along, and we needed modern hardware to get them working.
+
+Historically, AI breakthroughs have consistently happened with models that take between 7–10 days to train. This means that hardware defines the surface of potential AI breakthroughs. This is a statement about human psychology more than about AI. If experiments take longer than this, it&#x27;s hard to keep all the state in your head and iterate and improve. If experiments are shorter, you&#x27;ll just use a bigger model.
+
+It&#x27;s not so much that AI progress is a hardware game, any more than physics is a particle accelerator game. But if our computers are too slow, no amount of cleverness will result in AGI, just like if a particle accelerator is too small, we have no shot at figuring out how the universe works. Fast enough computers are a necessary ingredient, and all past failures may have been caused by computers being too slow for AGI.
+
+Until very recently, there was no way to use many GPUs together to run faster experiments, so academia had the same &quot;effective compute&quot; as industry. But earlier this year, Google used two orders of magnitude more compute than is typical to optimize the architecture of a classifier, something that usually requires lots of researcher time. And a few months ago, Facebook released a paper showing how to train a large ImageNet model with near-linear speedup to 256 GPUs (given a specially-configured cluster with high-bandwidth interconnects).
+
+Over the past year, Google Brain produced impressive results because they have an order of magnitude or two more GPUs than anyone. We estimate that Brain has around 100k GPUs, FAIR has around 15–20k, and DeepMind allocates 50 per researcher on question asking, and rented 5k GPUs from Brain for AlphaGo. Apparently, when people run neural networks at Google Brain, it eats up everyone&#x27;s quotas at DeepMind.
+
+We&#x27;re still missing several key ideas necessary for building AGI. How can we use a system&#x27;s understanding of &quot;thing A&quot; to learn &quot;thing B&quot; (e.g. can I teach a system to count, then to multiply, then to solve word problems)? How do we build curious systems? How do we train a system to discover the deep underlying causes of all types of phenomena — to act as a scientist? How can we build a system that adapts to new situations on which it hasn&#x27;t been trained on precisely (e.g. being asked to apply familiar concepts in an unfamiliar situation)? But given enough hardware to run the relevant experiments in 7–10 days, history indicates that the right algorithms will be found, just like physicists would quickly figure out how the universe works if only they had a big enough particle accelerator.
+
+There is good reason to believe that deep learning hardware will speed up 10x each year for the next four to five years. The world is used to the comparatively leisurely pace of Moore&#x27;s Law, and is not prepared for the drastic changes in capability this hardware acceleration will bring. This speedup will happen not because of smaller transistors or faster clock cycles; it will happen because like the brain, neural networks are intrinsically parallelizable, and new highly parallel hardware is being built to exploit this.
+
+Within the next three years, robotics should be completely solved, AI should solve a long-standing unproven theorem, programming competitions should be won consistently by AIs, and there should be convincing chatbots (though no one should pass the Turing test). In as little as four years, each overnight experiment will feasibly use so much compute capacity that there&#x27;s an actual chance of waking up to AGI, given the right algorithm — and figuring out the algorithm will actually happen within 2–4 further years of experimenting with this compute in a competitive multiagent simulation.
+
+To be in the business of building safe AGI, OpenAI needs to:
+
+- Have the best AI results each year. In particular, as hardware gets exponentially better, we&#x27;ll have dramatically better results. Our DOTA and Rubik&#x27;s cube projects will have impressive results for the current level of compute. Next year&#x27;s projects will be even more extreme, and what&#x27;s realistic depends primarily on what compute we can access.
+- Increase our GPU cluster from 600 GPUs to 5000 GPUs ASAP. As an upper bound, this will require a capex of $12M and an opex of $5–6M over the next year. Each year, we&#x27;ll need to exponentially increase our hardware spend, but we have reason to believe AGI can ultimately be built with less than $10B in hardware.
+- Increase our headcount: from 55 (July 2017) to 80 (January 2018) to 120 (January 2019) to 200 (January 2020). We&#x27;ve learned how to organize our current team, and we&#x27;re now bottlenecked by number of smart people trying out ideas.
+- Lock down an overwhelming hardware advantage. The 4-chip card that Jim Keller says he can build in 2 years is effectively TPU 3.0 and (given enough quantity) would allow us to be on an almost equal footing with Google on compute. The Cerebras design is far ahead of both of these, and if they&#x27;re real then having exclusive access to them would put us far ahead of the competition. We have a structural idea for how to do this given more due diligence, best to discuss on a call.
+
+2/3/4 will ultimately require large amounts of capital. If we can secure the funding, we have a real chance at setting the initial conditions under which AGI is born. Increased funding needs will come lockstep with increased magnitude of results. We should discuss options to obtain the relevant funding, as that&#x27;s the biggest piece that&#x27;s outside of our direct control.
+
+Progress this week:
+
+- We&#x27;ve beat our top 1v1 test player (he&#x27;s top 30 in North America at 1v1, and beats the top 1v1 player about 30% of the time), but the bot can also be exploited by playing weirdly. We&#x27;re working on understanding these exploits and cracking down on them.
+  * Repeated from Saturday, here&#x27;s the first match where we beat our top test player: https://www.youtube.com/watch?v=FBoUHay7XBI&amp;feature=youtu.be&amp;t=345
+  * Every additional day of training makes the bot stronger and harder to exploit.
+- Robot getting closer to solving Rubik&#x27;s cube.
+  * The improved cube simulation teleoperated by a human: &lt;redacted&gt;.
+- Our defense against adversarial examples is starting to work on ImageNet.
+  * We will completely solve the problem of adversarial examples by the end of August.
+
+We also have four strong researchers leaving OpenAI:
+
+- Peter Xi Chen, Rocky Yan Duan, and Jonathan Ho are leaving to start a robotics startup to solve all robotics manufacturing in China. They&#x27;re highly motivated to start a company (Peter and Rocky had an unsuccessful startup before OpenAI).
+- Alec Radford is leaving due to a mismatch in research interests (he doesn&#x27;t believe AGI is near, and wants to work on what he views as shorter-term problems).</div><div class="meta"><div><p class="label">About this email</p><p>Sutskever lays out the thesis that hardware is the binding constraint on AGI, predicts 10x yearly hardware speedups, and lists what OpenAI needs: best results each year, 5,000 GPUs, headcount growth to 200 by 2020, and an overwhelming hardware advantage, all requiring large amounts of capital.</p></div><div><p class="label">Notes</p><p>Text taken from the LessWrong transcription (habryka, Nov 16 2024), which the compiler states was checked against the originals. Published by OpenAI in its Dec 2024 blog post. The email ends with three blacked-out passages in the source. No reply from Musk is reproduced. Redacted passages restored from the unsealed court exhibit (Dkt. 379-77).</p></div><div><p class="label">Where it came from</p><p>Published by recipient; attribution confirmed.</p><ul><li><a href="https://openai.com/index/elon-musk-wanted-an-openai-for-profit/" rel="noopener">OpenAI blog: Elon Musk wanted an OpenAI for-profit (Dec 13, 2024)</a></li><li><a href="https://www.lesswrong.com/posts/5jjk4CDnj9tA7ugxr/openai-email-archives-from-musk-v-altman-and-openai-blog" rel="noopener">LessWrong: OpenAI Email Archives (from Musk v. Altman and OpenAI blog)</a></li><li><a href="https://storage.courtlistener.com/recap/gov.uscourts.cand.433688/gov.uscourts.cand.433688.379.77.pdf" rel="noopener">Musk v. Altman, Dkt. 379-77 (Ex. 38 to Hawes Declaration, Bates 2024MUSK-0006991; unsealed Jan 6, 2026)</a></li></ul></div><p>OpenAI, executive &amp; internal. Tags: agi, compute, hardware, funding, cerebras, strategy</p><div class="actions"><a class="btn" href="2017-06-28-d75e85.html">Earlier email</a><a class="btn solid" href="../index.html">Search all emails</a><a class="btn" href="2017-07-18-15aa52.html">Later email</a></div></div></div></main><footer><p>An unofficial, independent compilation. Not affiliated with Elon Musk or any of his companies. Text is reproduced as published by the linked source.</p></footer></div></body></html>
